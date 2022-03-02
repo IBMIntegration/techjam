@@ -1,0 +1,80 @@
+- title: Overview
+  pages:
+    - path: /overview/
+- title: Installing CP4I on-prem
+  pages:
+    - title: CP4I Airgapped Install
+      path: /cp4i-airgap/
+    # - title: One-click install
+    #   path: /cp4i-on-roks/
+    # - title: Manual install
+    #   path: /cp4i-install/
+- title: ACE Labs
+  pages:
+    - title: Labs Overview
+      path: /acelabs/Overview
+    - title: Labs Prerequisites
+      path: /acelabs/Updated-Pre-Lab/
+    - title: Lab 1
+      path: /acelabs/Lab_1/
+    - title: Lab 2
+      path: /acelabs/Lab_2/
+    - title: Lab 3
+      path: /acelabs/Lab_3/
+    - title: Lab 4
+      path: /acelabs/Lab_4/
+    - title: Lab 5
+      path: /acelabs/Lab_5/
+- title: MQ Labs
+  pages:
+    - title: Overview
+      path: /MQ-Labs/Overview
+    - title: Creating an MQ Instance Using the Platform Navigator
+      path: /MQ-Labs/Lab1/
+    - title: Automate MQ Configuration with Tekton Pipelines
+      path: /MQ-Labs/Lab2
+    - title: Deploying a Cloud Native HA persistent IBM MQ Queue Manager on the Cloud Pak for Integration
+      path: /MQ-Labs/Lab3/
+- title: EventStreams Labs
+  pages:
+    - title: EventStreams Labs Prerequisites
+      path: /es-labs/lab-0
+    - title: Producing & Consuming Data with Event Streams
+      path: /es-labs/lab-1
+- title: APIC Labs
+  pages:
+    - title: APIC DevJam
+      path: /APICDevJam
+    - title: Lab 1 - Create and Secure an API
+      path: /APICDevJam/Lab1
+    - title: Lab 2 - The Developer Portal Experienace
+      path: /APICDevJam/Lab2
+    - title: Lab 3 - Add OAuth Security to your API
+      path: /APICDevJam/Lab3
+    - title: Lab 4 - Use Lifecycle Controls to Version your API
+      path: /APICDevJam/Lab4
+    - title: Lab 5 - Advanced API Assembly
+      path: /APICDevJam/Lab5
+    - title: Lab 6 - Working with API Products
+      path: /APICDevJam/Lab6
+    - title: Lab 7 - The Consumer Experience
+      path: /APICDevJam/Lab7
+    - title: Lab 8 -- Creating GraphQL Proxy API
+      path: /APICDevJam/Lab8
+- title: Confluent Labs
+  pages:
+    - title: Overview
+      path: /Confluent/Overview
+    - title: Lab 1
+      path: /Confluent/Lab1
+    - title: Lab 2
+      path: /Confluent/Lab2
+    - title: Lab 3
+      path: /Confluent/Lab3
+    - title: Lab 4
+      path: /Confluent/Lab4
+    - title: Lab 5
+      path: /Confluent/Lab5
+- title: Resources
+  pages:
+    - path: /resources/
