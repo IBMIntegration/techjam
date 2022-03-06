@@ -8,9 +8,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Carbon Design Gatsby Theme',
+        name: 'Automation SWAT Integration',
         icon: 'src/images/favicon.svg',
-        short_name: 'Gatsby Theme Carbon',
+        short_name: 'Automation SWAT Integration',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#161616',

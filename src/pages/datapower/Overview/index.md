@@ -1,0 +1,36 @@
+---
+title: Datapower Labs Overview
+---
+
+The DataPower Tech Jam Overview Presentation will present an introduction 
+to DataPower so that you will be able to explain its high-level use cases, its 
+form factors, and the single, modular, and extensible gateway platform.  It 
+will also present DataPower Capabilities: Security, Control, Optimization, and 
+Integration.   
+
+Diving further into DataPower, learn about:
+
+-  DataPower in IBM Cloud Pak for Integration
+-  Gateway Trends
+-  DevOps for DataPower based upon the form factors
+-  API Gateway
+-  Its Release Strategy with Long Term Support Releases and Continuous 
+
+Delivery Releases
+
+In addition to the technical side of DataPower, learn about:
+-  best practices working with DataPower L2 and L3
+-  URLs to bookmark
+-  IBM DataPower Community
+
+# Labs Overview:
+
+|  Subject                            | Description                 |  
+|-------------------------|-----------------------------------------|
+| [Creating a Secure Multi-Protocol Gateway](/datapower/Lab1) | In this lab, you will create a create secure multi-protocol gateway that will take a HTTPS post and decrypt it to HTTP.  The use case for this a client is taking secure messages and decrypting them before routing them to one of its backend servers that propagates the messages to other internal servers.  The lab uses a loopback to simulator the backend server.|
+| [Create a Secure Backup](/datapower/Lab2) | In this lab, you will take a secure backup of the DataPower.  A secure backup of a DataPower allows you to easily clone an appliance.  The clone includes all of the configuration information, all of the crypto credentials, network configuration and users information.  This is also how you clone the configuration from an older generation of appliance to a new generation of appliance.  An example, take a secure backup on an IDG and move it to a X2.  One limitation of the Secure Backup and Restore is it cannot cross form factors from physical hardware to virtual.|
+| [Export and Import]() |  In this lab, you will export a domain, a DataPower domain is like a user a separate user environment.  Clients create application domains to partition their DataPower services.  An export of a domain is the way to move configuration of a DataPower contained in the domain from physical to virtual.  Also, in this lab, you will import a domain that I have created onto to the appliance.|
+
+**## User Credentials**
+
+There are three labs.  For creating a Secure Multi-Protocol Gateway, you will need one set of credentials that have developer credentials and an assigned domain.  The other two, you will need another set of credentials that have admin authority. Send an email to [George Inness](mailto:innessrg@us.ibm.com) with your lab login userID to receive credentials for these labs.

@@ -1,14 +1,3 @@
-- title: Overview
-  pages:
-    - path: /overview/
-- title: Installing CP4I on-prem
-  pages:
-    - title: CP4I Airgapped Install
-      path: /cp4i-airgap/
-    # - title: One-click install
-    #   path: /cp4i-on-roks/
-    # - title: Manual install
-    #   path: /cp4i-install/
 - title: ACE Labs
   pages:
     - title: Labs Overview
@@ -43,38 +32,30 @@
       path: /es-labs/lab-1
 - title: APIC Labs
   pages:
-    - title: APIC DevJam
-      path: /APICDevJam
+    - title: APIC Overview
+      path: /APIC-labs-new/Overview
     - title: Lab 1 - Create and Secure an API
-      path: /APICDevJam/Lab1
+      path: /APIC-labs-new/Lab1
     - title: Lab 2 - The Developer Portal Experienace
-      path: /APICDevJam/Lab2
-    - title: Lab 3 - Add OAuth Security to your API
-      path: /APICDevJam/Lab3
-    - title: Lab 4 - Use Lifecycle Controls to Version your API
-      path: /APICDevJam/Lab4
-    - title: Lab 5 - Advanced API Assembly
-      path: /APICDevJam/Lab5
-    - title: Lab 6 - Working with API Products
-      path: /APICDevJam/Lab6
-    - title: Lab 7 - The Consumer Experience
-      path: /APICDevJam/Lab7
-    - title: Lab 8 -- Creating GraphQL Proxy API
-      path: /APICDevJam/Lab8
-- title: Confluent Labs
+      path: /APIC-labs-new/Lab2
+    - title: Lab 3 - Add OAuth Security to your API and use Lifecycle Controls to Version Your API
+      path: /APIC-labs-new/Lab3
+    - title: Lab 4 - Creating a GraphQL Proxy API
+      path: /APIC-labs-new/Lab4
+- title: Datapower
   pages:
-    - title: Overview
-      path: /Confluent/Overview
-    - title: Lab 1
-      path: /Confluent/Lab1
-    - title: Lab 2
-      path: /Confluent/Lab2
-    - title: Lab 3
-      path: /Confluent/Lab3
-    - title: Lab 4
-      path: /Confluent/Lab4
-    - title: Lab 5
-      path: /Confluent/Lab5
+    - title: Datapower Labs Overview
+      path: /datapower/Overview
+    - title: Secure Multi-Protocol Gateway
+      path: /datapower/Lab1
+    - title: Create a Secure Backup
+      path: /datapower/Lab2
+- title: Aspera
+  pages:
+    - title: Aspera Labs Prep
+      path: /aspera-lab/lab0
+    - title: Aspera Lab
+      path: /aspera-lab/lab1
 - title: Resources
   pages:
     - path: /resources/
