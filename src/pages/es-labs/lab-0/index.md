@@ -15,7 +15,7 @@ This section provides the instructions for setting up the Kafka Client that will
     If it’s not installed, download and install the Java Runtime. https://www.java.com/en/download/manual.jsp
 
 2.	Download the sample Kafka Client from here:
-    https://ibm.box.com/shared/static/wgx4fg6fm71scu1rcpi4hrxf2hm86r9a.zip
+    https://ibm.box.com/shared/static/ogvj2jwgh7c505oj58w2kjgh4ypo3x09.zip  
 3.	Unzip the downloaded Kafka Client (KafkaClient_YYYYMMDD.zip) into a folder called 
     `C:\TechJam\EventStreams_Lab\`
 4.	Test the client
