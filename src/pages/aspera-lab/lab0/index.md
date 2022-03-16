@@ -43,9 +43,9 @@ You will receive an email with details on how to access the reserved server. Thi
 > > 	sudo mkdir /opt/software
 > > 	cd /opt/software/
 > > 	
-> > 	sudo wget -v -O ibm-aspera-lab-software.zip https://ibm.box.com/shared/static/uuyu4iu44iiwjwyrt7qsy7oiky6pyr4g.zip
+> > 	sudo wget -v -O ibm-aspera-lab-software.zip https://ibm.box.com/shared/static/q4zzlhk5pn5osn0ojtzx67q8ulg9ig2e.zip
 > > 	
-> > 	sudo wget -v -O ibm-aspera-lab-license.zip https://ibm.box.com/shared/static/9101jlsfp9d0c9ymccwr9spfxeqjyt5g.zip
+> > 	sudo wget -v -O ibm-aspera-lab-license.zip https://ibm.box.com/shared/static/y5s6c2abk2m81iaji2zctyg976qmt0ga.zip
 > > 	
 > > 	sudo unzip ibm-aspera-lab-software.zip
 > > 	sudo unzip ibm-aspera-lab-license.zip

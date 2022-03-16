@@ -215,7 +215,7 @@ For scenarios where the Console and Shares are installed in the same machine, it
 > > 	
 > > 	Now setup Console.
 > > 	asctl console:setup
-![](images/12.jpg)
+![](images/12v2.jpg)
 
 This takes a few minutes to complete. At the end, you will be asked to restart apache, mysql and console. Type ‘y’ to accept and restart.    
 If setup was completed successfully, you will see this message.
@@ -270,7 +270,9 @@ In the next screen click on “Test Credentials”. You should see a message say
 
 2. Configure MySQL to make Shares use the same database as Console
 > 	Edit /opt/aspera/shares/etc/my.cnf.setup
-> 	Insert the MySQL username and password that you used during the install of Console and set host to 127.0.0.1. For the Port, use 5506 if faspex5 is also installed in the same server. Otherwise, leave it at 4406.   
+> 	Insert the MySQL username and password that you used during the install of Console and set host to 127.0.0.1. For the Port, use 5506 if faspex5 is also installed in the same server. Otherwise, leave it at 4406.
+> 	Make sure to use "127.0.0.1" for the host and not "localhost".
+   
 ![](images/19.jpg)
 
 3. Run the Shares Installer
@@ -299,9 +301,10 @@ In the next screen click on “Test Credentials”. You should see a message say
 6. Change nginx Web Server listening ports.  
 This step is needed to allow Console to use Nginx and also for Faspex5 to be installed in the same machine.    
 > > 	Edit this file: /opt/aspera/shares/etc/nginx/nginx.conf
-> > 	Change the port from 80 to 8080 and 443 to 8443. (If faspex5 is installed).  
+> > 	Change the port from 80 to 8080 and 443 to 8443. (If faspex5 is installed).    
 
-	![](images/20.jpg).  
+![](images/20.jpg) 
+
 > > 	Comment out this line:
 > > 	#add_header Content-Security-Policy "default-src 'self' 'unsafe-inline' https://local.connectme.us https://d3gcli72yxqn2z.cloudfront.net";
 > > Restart Nginx.  
@@ -320,8 +323,9 @@ service aspera-shares restart
 > > 	Paste the contents of the Shares license file [Shares.eval.aspera-license]. Click on Save.
 ![](images/21.jpg).  
 
-	> 	You should see the details of the license displayed.    
-	> 	![](images/22.jpg)
+> > You should see the details of the license displayed.    
+
+![](images/22.jpg)
 
 9. Update the Web Server IP Address.  
 From the Shares Admin page change the web server IP address.
@@ -352,14 +356,14 @@ Some default config files are here: /opt/aspera/faspex/conf/docker/. No change i
 > > 	faspexctl setup
 ![](images/27.jpg).  
 This will pull images, install Faspex5 and start the containers. Takes a few minutes.   
-*If you see a port 6000 conflict, refer to” [Lab Preparation Document](../lab0/index.md)” to kill the xvnc process.*   
+*If you see a port 6000 conflict, refer to” [Lab Preparation Document](/aspera-lab/lab0/)” to kill the xvnc process.*   
 
 	Check the container status:   
 > >			faspexctl status
 ![](images/28.jpg)
 All containers should be in Up status.
 
-3. Add HSTS as Transfer Node in Faspex5.  
+1. Add HSTS as Transfer Node in Faspex5.  
 	Faspex5 is a web application. We need to add a Transfer server for file transfer purposes.   
 
 > > 	Create a package_storage folder under /data/faspex5_data

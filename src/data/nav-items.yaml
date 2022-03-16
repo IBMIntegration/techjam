@@ -26,7 +26,7 @@
       path: /MQ-Labs/Lab3/
 - title: EventStreams Labs
   pages:
-    - title: EventStreams Labs Prerequisites
+    - title: EventStreams Labs Prep
       path: /es-labs/lab-0
     - title: Producing & Consuming Data with Event Streams
       path: /es-labs/lab-1
