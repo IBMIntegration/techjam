@@ -1,0 +1,176 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {
+        "components": {
+          "name": "components",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "data": {
+          "name": "data",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "gatsby-theme-carbon": {
+          "name": "gatsby-theme-carbon",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "images": {
+          "name": "images",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "pages": {
+          "name": "pages",
+          "isOrdered": true,
+          "folders": {
+            "APIC-labs-new": {
+              "name": "APIC-labs-new",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "MQ-Labs": {
+              "name": "MQ-Labs",
+              "isOrdered": true,
+              "folders": {
+                "Lab1": {
+                  "name": "Lab1",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "Lab2": {
+                  "name": "Lab2",
+                  "isOrdered": true,
+                  "folders": {
+                    "images": {
+                      "name": "images",
+                      "isOrdered": true,
+                      "folders": {},
+                      "files": {}
+                    }
+                  },
+                  "files": {
+                    "index_old": 0
+                  }
+                },
+                "Lab3": {
+                  "name": "Lab3",
+                  "isOrdered": true,
+                  "folders": {
+                    "images": {
+                      "name": "images",
+                      "isOrdered": true,
+                      "folders": {},
+                      "files": {}
+                    }
+                  },
+                  "files": {
+                    "index": 0
+                  }
+                },
+                "Overview": {
+                  "name": "Overview",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {
+                    "index": 0
+                  }
+                }
+              },
+              "files": {}
+            },
+            "acelabs": {
+              "name": "acelabs",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "aspera-lab": {
+              "name": "aspera-lab",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "components": {
+              "name": "components",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "datapower": {
+              "name": "datapower",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "demo": {
+              "name": "demo",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "es-labs": {
+              "name": "es-labs",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "gallery": {
+              "name": "gallery",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "getting-started": {
+              "name": "getting-started",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "guides": {
+              "name": "guides",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "test": {
+              "name": "test",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {}
+        },
+        "styles": {
+          "name": "styles",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "static": {
+      "name": "static",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}
