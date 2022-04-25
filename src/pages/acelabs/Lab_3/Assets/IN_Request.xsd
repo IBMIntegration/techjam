@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <xsd:element name="customerCreditScore" type="xsd:string"/>
+  <xsd:element name="customerCreditScore" type="xsd:int"/>
   <xsd:element name="customerState" type="xsd:string"/>
   <xsd:element name="requestDecision" type="xsd:string"/>
   <xsd:element name="comments" type="xsd:string"/>
@@ -7,18 +7,18 @@
   <xsd:element name="customerPostalCode" type="xsd:string"/>
   <xsd:element name="contactFirstName" type="xsd:string"/>
   <xsd:element name="customerCity" type="xsd:string"/>
-  <xsd:element name="customerNumber" type="xsd:string"/>
+  <xsd:element name="customerNumber" type="xsd:int"/>
   <xsd:element name="contactDetails" type="contactDetailsType"/>
   <xsd:element name="customerName" type="xsd:string"/>
   <xsd:element name="customerCountry" type="xsd:string"/>
-  <xsd:element name="DateRequest" type="xsd:string"/>
+  <xsd:element name="DateRequest" type="xsd:date"/>
   <xsd:element name="ActionRequest" type="xsd:string"/>
   <xsd:element name="customerAddress1" type="xsd:string"/>
   <xsd:element name="contactLastName" type="xsd:string"/>
   <xsd:element name="contactPhoneNumber" type="xsd:string"/>
   <xsd:element name="customerDetails" type="customerDetailsType"/>
   <xsd:element name="customerAddress2" type="xsd:string"/>
-  <xsd:element name="customerCreditLimit" type="xsd:string"/>
+  <xsd:element name="customerCreditLimit" type="xsd:int"/>
   <xsd:complexType name="In_RequestType">
     <xsd:sequence>
       <xsd:element ref="ActionRequest"/>
