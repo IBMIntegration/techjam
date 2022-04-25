@@ -262,16 +262,16 @@ With the Toolkit you can build powerful and complex integration applications, se
 In this next section you will deploy the PING_Basic bar file created and tested in the toolkit in the last section to the Cloud Pak for Integration.
 
 1\. Open a Firefox browser window and go to the following URL for the CP4I Platform Navigator:
-[https://int-cp4i21-pn-cp4i21.apps.wedge.coc-ibm.com/](https://int-cp4i21-pn-cp4i21.apps.wedge.coc-ibm.com/)
+[https://cpd-cp4i.apps.mandalorian.coc-ibm.com/](https://cpd-cp4i.apps.mandalorian.coc-ibm.com/)
 
-Note: This is the url for the cluster you are assigned for this Lab.   In this instance we are using the **wedge cluster**.
+Note: This is the url for the cluster you are assigned for this Lab.   In this instance we are using the **mandalorian cluster**.
 
 2\. Select the Enterprise LDAP:
 
 ![alt text][images/3.png4]
 
 3\. When prompted use the username and password provided to you for this lab.
-In this example we are using **chopper9**.
+In this example we are using **mandalorian1**.
 
 ![alt text][images/3.png5]
 
@@ -312,7 +312,7 @@ After a little bit refresh the page.  Once the server is up and running it will 
 We will now test the PING_Base flow we just deployed to CP4I in the Integration Server
 
 1\. Open a new firefox browser window and enter the following address:
-In this example we are using the **mandalorian** cluster and **jamuser1 userid**
+In this example we are using the **mandalorian** cluster and **mandalorian1 userid**
 
 [http://is-toolkit-basic-http-mandalorianNN.apps.mandalorian.coc-ibm.com/PING_Basic ](http://is-toolkit-basic-http-mandalorianNN.apps.mandalorian.coc-ibm.com/PING_Basic )
 
