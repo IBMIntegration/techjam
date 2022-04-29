@@ -1,31 +1,27 @@
-# Gatsby Theme Carbon Starter
+# SWAT Integration TechJam Site built with Gatsby Carbon Theme
 
-## What is this?
+## Setup Environment
 
-> Gatsby [themes](https://www.gatsbyjs.org/docs/themes/) encapsulate all of the
-> configuration and implementation details of Gatsby websites. This is a
-> starter-kit (boilerplate) with a dependancy on the `gatsby-theme-carbon`
-> package. The primary goal of `gatsby-theme-carbon` is to get content authors
-> speaking the IBM Design Language with Carbon as soon as possible. It includes
-> some sample components/content demos in the `src/pages` directory.
+1. Install nodejs v14.15 or newer.
+2. Install Git CLI for cloning, pulling, and pushing to the repo.
+3. Install Gatsby CLI
+   1. `npm install gatsby-cli`
+4. Install Yarn
+   1. `npm install --global yarn`
 
-## How do I use it?
+### **REFERENCE PAGE: For detailed instructions on the steps above https://www.gatsbyjs.com/docs/tutorial/part-0/**
 
-Check out our quick
-[getting started](https://gatsby-theme-carbon.now.sh/getting-started) guide and
-video!
+## Get Started
 
-`gatsby-theme-carbon` at it’s core relies on [mdx](https://mdxjs.com/) for page
-creation. Check out the `src/pages` directory for some examples for using mdx.
+1. Clone repo
+2. Run `yarn dev` to build and run the site locally on workstation.
+3. run `yarn deploy` to deploy the lastest version to the git pages. NOTE: this will not automatically update the master branch. You still need to do a commit and push to git separately.
 
-A key feature of Gatsby themes is component shadowing. By simply placing a
-component into the `src/gatsby-theme-carbon/components` location, you can
-override components used by the theme. You can read more about component
-shadowing
-[here](https://www.gatsbyjs.org/docs/themes/api-reference#component-shadowing).
+## updating pages
 
-You’re also free to make your own components and use them in your MDX pages.
+1. the main content for labs reside under pages as normal markdown files. There are some special features included in Carbon which can be found here https://gatsby-theme-carbon.vercel.app/ 
+2. if you're creating new content, you must also update /data/nav-items.yaml to include the new pages in the site.
 
-## What’s Next?
+## FAQs and other items
 
-[Check out the docs!](https://gatsby-theme-carbon.now.sh)
+The carbon theme runs using Gatsby 3. The latest version of Gatsby is 4. It is extremely difficult to find custom gatsby plugins specifically for Gatsby 3. 

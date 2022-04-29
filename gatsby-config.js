@@ -26,8 +26,36 @@ module.exports = {
             'https://pages.github.ibm.com/cloud-integration-swat/techjam/',
           subDirectory: '/',
         },
-      },
+      }
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-zoom`,
+            options: {
+              margin: 100,
+              background: "#161616",
+              container: {
+                // width: 720,
+                // height: 480,
+                // top: 64,
+                // bottom: 64,
+                // right: 50,
+                left: 200,
+              }
+            }
+          }
+        ],
+      },
+    }
   ],
   pathPrefix: "/cloud-integration-swat/techjam/",
 };

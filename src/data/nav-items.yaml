@@ -28,8 +28,10 @@
   pages:
     - title: EventStreams Labs Prep
       path: /es-labs/lab-0
-    - title: Producing & Consuming Data with Event Streams
+    - title: Getting Started with IBM Event Streams 10.5.0
       path: /es-labs/lab-1
+    - title: Producing & Consuming Data with Event Streams
+      path: /es-labs/lab-2
 - title: APIC Labs
   pages:
     - title: APIC Overview
