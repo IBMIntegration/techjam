@@ -46,11 +46,11 @@ In the next section you will create a local integration server using this featur
 
 ![alt text][images/0.png]
 
-1\. Open the IBM App Connect Enterprise Toolkit.  From the Workspace Launcher we will create a new workspace for the work in this lab guide enter the Workspace name and click OK.
+1\. Open the IBM App Connect Enterprise Toolkit.  From the Workspace Launcher we will create a new workspace for the work in this lab guide enter the Workspace name and click Launch.
 
 ![alt text][images/1.png]
 
-2\. In the “**Welcome to IBM App Connect Enterprise Toolkit**” window click the arrow to go to the **Integration Toolkit**:
+2\. In the “**Welcome to IBM App Connect Enterprise Toolkit**” window click Close page:
 
 ![alt text][images/2.png]
 
@@ -241,7 +241,7 @@ the request should return details of TEST_SERVER:
 
 Create a BAR file in order to deploy the solution to the Cloud Pak for integration server
 
-1\. In the ACE Toolkit, right click on the Application Development window and select **New> BAR file**. Call the BAR file **PING_BasicBAR**. Click Finish to create the BAR file.
+1\. In the ACE Toolkit, right click on the Application Development window and select **New> BAR file**. Call the BAR file **PING_Basic**. Click Finish to create the BAR file.
 
 2\. When the BAR file editor opens, select the **PING_Basic** Application, select the compile and in-line resources, then click “**Build and Save**”:
 
@@ -261,10 +261,10 @@ With the Toolkit you can build powerful and complex integration applications, se
 
 In this next section you will deploy the PING_Basic bar file created and tested in the toolkit in the last section to the Cloud Pak for Integration.
 
-1\. Open a Firefox browser window and go to the following URL for the CP4I Platform Navigator:
+1\. Open a  browser window and go to the following URL for the CP4I Platform Navigator:
 [https://cpd-cp4i.apps.mandalorian.coc-ibm.com/](https://cpd-cp4i.apps.mandalorian.coc-ibm.com/)
 
-Note: This is the url for the cluster you are assigned for this Lab.   In this instance we are using the **mandalorian cluster**.
+Note: This is the url for the cluster you are assigned for this Lab.   In this instance we are using the **cody cluster**.
 
 2\. Select the Enterprise LDAP:
 
