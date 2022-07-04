@@ -6,7 +6,7 @@ title: Create and Secure an API to Proxy an Existing REST Web Service
 
 ---
 
-# Table of Contents 
+# Table of Contents
 1. [Introduction](#introduction)
 2. [Deploying the REST Service](#deploy)
 
@@ -22,7 +22,7 @@ title: Create and Secure an API to Proxy an Existing REST Web Service
 6. [Publish API](#publish_api)
    1. [Create Customer Product and Add API](#customer_product)
 7. [Summary](#summary)
-    
+
 ---
 
 ## 1. Introduction <a name="introduction"></a>
@@ -39,9 +39,9 @@ In this tutorial, we will explore the following key capabilities:
 
 -   Publish an API for developers
 
-## 2. Deploying the REST Services <a name="deploy"></a>
+## 2. Preparation step: Deploying the REST Services <a name="deploy"></a>
 
-First, we will deploy a Customer Database REST service and then we will download the OpenAPI file for the the Customer Database REST service that we deployed.
+Before we can use API Connect we must publish an API to expose. We will deploy a Customer Database REST service and then we will download the OpenAPI file for the the Customer Database REST service that we deployed.
 
 1\. In a browser, enter the URL for the Platform Navigator that is provided by your instructor.
 
@@ -49,7 +49,7 @@ First, we will deploy a Customer Database REST service and then we will download
 
 ![alt text][pic0]
 
-**Note:** You may get a warning message that your connection is not private.  If you get this message, you can add an exception.  
+**Note:** You may get a warning message that your connection is not private.  If you get this message, you can add an exception.   Occasionally in Edge on Windows you get a blank screen instead of a warning. If this is the case we recommend that you try a a different browser.
 
 To add an exception in the Chrome browser, click **Advanced** and then click **Proceed** to the URL.
 
@@ -105,7 +105,7 @@ To add an exception in the Firefox browser, click **Advanced** and then click **
 
 ![alt text][pic99]
 
-14\. Note: It may take a several minutes to start up. You can refresh the page. Once it is up and running it will show the following:
+14\. Note: It may take a couple of minutes to start up. You can refresh the page. Once it is up and running it will show the following:
 
 ![alt text][pic100]
 
@@ -141,7 +141,7 @@ To add an exception in the Firefox browser, click **Advanced** and then click **
 [pic102]: images/102.png
 [pic103]: images/103.png
 
-## 3. Import an API into the Developer Workspace <a name="import_api"></a>
+## 3. Import an API into API Connect <a name="import_api"></a>
 
 1\. Click on **IBM Automation** in the upper left.
 
@@ -151,7 +151,7 @@ To add an exception in the Firefox browser, click **Advanced** and then click **
 
 ![alt text][pic6]
 
-3\. Click **TechCon LDAP User Registry**.
+3\. Click **TechCon LDAP User Registry**. *If you are not following this guide as part of a TechJam log in with your standard credentials and jump to 6.*
 
 ![alt text][pic7]
 
@@ -190,7 +190,7 @@ To add an exception in the Firefox browser, click **Advanced** and then click **
 12\.  The API should be imported successfully as shown in the image below.  Click **Edit API**.
 
 ![alt text][pic15]
-    
+
 [pic6]: images/6.png
 [pic7]: images/7.png
 [pic8]: images/8.png
@@ -205,9 +205,9 @@ To add an exception in the Firefox browser, click **Advanced** and then click **
 
 ## 4. Configure the API <a name="configure_api"></a>
 
-After importing the existing API, the first step is to configure basic security before exposing it to other developers. By creating a client key and secret security, we are able to identify the application using the API. 
+After importing the existing API, the first step is to configure basic security before exposing it to other developers. By creating a client key and secret security, we are able to identify the application using the API.
 
-Next, we will define the backend endpoints where the API is actually running. IBM API Connect supports pointing to multiple backend endpoints to match your multiple build stage environments. 
+Next, we will define the backend endpoints where the API is actually running. IBM API Connect supports pointing to multiple backend endpoints to match your multiple build stage environments.
 
 Finally, we will configure the proxy call to invoke the endpoint.
 
@@ -473,9 +473,9 @@ Navigate back to the **API Connect** browser window.
 ![alt text][pic65]
 
 8\. For the **Request**, select the request that begins with **POST** and ends in **../customerdb/v1/customers**.  Click on the **Body** tab.
- 
+
  ![alt text][pic66]
- 
+
 9\. In the **Body** tab, enter some text in the following JSON format:<br\>
 ```
 {  
@@ -522,7 +522,7 @@ Click **Send**.
 }
 ```
 and click **Send**.
- 
+
 ![alt text][pic74]
 
 17\. The response should show that the customer ID was updated.
@@ -582,7 +582,7 @@ and click **Send**.
 
 ## 6. Publish API <a name="publish_api"></a>
 
-In this lab, we will make the API available to developers. In order to do so, the API must be first put into a product and then published to the Sandbox catalog. A product dictates rate limits and API throttling. 
+In this lab, we will make the API available to developers. In order to do so, the API must be first put into a product and then published to the Sandbox catalog. A product dictates rate limits and API throttling.
 
 When the product is published, the Invoke policy defined in the previous lab is written to the gateway. 
 
