@@ -410,30 +410,23 @@ While you see here IIB-supplied parsers for Properties (“WSPROPERTYPARSER”) 
 The next section will show how to tell IIB the payload is XML.
 
 23. Close the Notepad window.
-24. Return to the recorded message, and click the ![](./images/tkSaveIcon.png) save icon in the upper right corner.
+24. Return to the recorded message, and click save.
+
+    ![](assets/20220706_164223_savemessage.png)
 
 **Note!** If the recorded message is closed, you can double-click the ![](./images/tkViewChangeSaveRecordedMsg.png) icon to reopen it.
 
-![](./images/tkSaveRecordedMsg.png)
-
 25. Save the recorded message with the name ***Test message 1***, and click **OK**.
-
-![](./images/tkSaveTestmessage1.png "Save Test message 1")
-
-26. If still open, close the recorded message window.
-
-![](./images/tkCloseRecordedMsg.png "Close Recorded Message")
-
-27. In the *Application Development* pane, expand the **Other Resources** folder under the *IntoLab* project. You will see the recorded message you saved, with the name **IntroMessageFlow\_recordedMessage.xml**.
-28. Double-click this file to open it.
+26. In the *Application Development* pane, expand the **Other Resources** folder under the *IntoLab* project. You will see the recorded message you saved, with the name **IntroMessageFlow\_recordedMessage.xml**.
+27. Double-click this file to open it.
 
 ![](./images/tkOtherResourcesRecordedMessage.png)
 
-29. The XML editor will open. You can see the name you assigned to the recorded message.
+29. The Message Assembly Editor will open. You can see the name you assigned to the recorded message.
 
 ![](./images/tkRecordedMsgXML.png "IntroMessageFlow_recordedMessage.xml")
 
-30. Close the XML editor.
+30. Close the Message Assembly editor.
 
 ![](./images/tkCloseRecordedMsgXML.png)
 
@@ -597,7 +590,7 @@ This is needed in this case because the XML data contains three fields that are 
 ### Key Idea: Message Models
 
 |----|----|
-| ![](../images/common/info.png) |**Key Idea:** Message Models. Read the section below for additional information on Message Models and their purpose.|
+|**Key Idea:** Message Models. Read the section below for additional information on Message Models and their purpose.|
 
 Much of the business world relies on the exchange of information between applications. This information is contained in messages that have a defined structure that is known and agreed by the sender and the receiver.
 
@@ -683,7 +676,7 @@ The XML Parser was run in *programmatic* mode where it parsed the XML message, s
 ### Key Idea: Library Projects
 
 |----|----|
-| ![](../images/common/info.png) |**Key Idea:** Library Projects. Read the section below for additional information on Message Models and the purpose and use of Library Projects.|
+| **Key Idea:** Library Projects. Read the section below for additional information on Message Models and the purpose and use of Library Projects.|
 
 *Applications* and *Libraries* are deployable containers of resources: The contents of these can include message flows, message definitions (DFDL, XSD files), JAR files, XSL style sheets, and WebSphere Adapters files.
 
