@@ -28,14 +28,14 @@ Tools that you will use as part of these labs include:
 - Flow Exerciser
 - XPath Expression Builder
 
-A number of sections will be labeled “Key Idea” or “Key Concept”. Be sure to review these sections when you come across them, as they will explain concepts of IBM Integration Bus that you will explore in some detail in the early labs, but in more detail as you continue to work through the more advanced labs
+A number of sections will be labeled “Key Idea” or “Key Concept”. Be sure to review these sections when you come across them, as they will explain concepts of IBM App Connect Enterprise that you will explore in some detail in the early labs, but in more detail as you continue to work through the more advanced labs
 
 ### Key Idea: The Toolkit
 
 |---|---|
 | ![](./images/info.png) |The Integration Toolkit.  Read the section below for additional information on the IBM Integration Toolkit.|
 
-The Integration Toolkit is based on Eclipse and includes components from IBM Rational® Application Developer. It provides several Perspectives specifically for IBM Integration Bus as well as additional Perspectives from Rational Application Developer and Eclipse. This system is using the default installation. During the labs and lectures, you will be learning more about the components in a typical development and runtime environment.
+The Integration Toolkit is based on Eclipse and includes components from IBM Rational® Application Developer. It provides several Perspectives specifically for IBM App Connect Enterprise as well as additional Perspectives from Rational Application Developer and Eclipse. This system is using the default installation. During the labs and lectures, you will be learning more about the components in a typical development and runtime environment.
 
 The screenshot above is of the **Integration Development** perspective. It is divided into multiple views (or panes). Each view is identified by a tab at the top of the view. On the lower left are several additional views, such as the **Integration Nodes** view.
 
@@ -49,7 +49,7 @@ At upper right are tabs for the Perspective(s) that have been opened. To switch 
 
 The Integration Toolkit also provides links to a number of pre-defined patterns. In later labs you will explore how these are used.
 
-Eclipse is project oriented – artifacts are organized into projects. A project is typed. Project types that are specific to IBM Integration Bus include Applications, Integration Services, REST APIs and Libraries. Also, legacy projects of type Message Flow Project and Message Set Project can be created or imported into the toolkit. Since they pre-date the concept of Applications and Libraries, they will be visible in the hierarchy under a Folder called “Independent Resources”.
+Eclipse is project oriented – artifacts are organized into projects. A project is typed. Project types that are specific to IBM App Connect Enterprise include Applications, Integration Services, REST APIs and Libraries. Also, legacy projects of type Message Flow Project and Message Set Project can be created or imported into the toolkit. Since they pre-date the concept of Applications and Libraries, they will be visible in the hierarchy under a Folder called “Independent Resources”.
 
 Building a simple application
 -----------------------------
@@ -91,13 +91,13 @@ Building a simple application
 
     Enter **1.0** for the **Version** field;
 
-    Enter **Introduction to IBM Integration Bus V10** for the **Short description** field;
+    Enter **Introduction to IBM App Connect Enterprise V10** for the **Short description** field;
 
     Your choice of information in the **Long description** field.
 
     ![](./images/tkMsgFlowEditor.png "New Application")
 
-    A message flow must begin with an Input node. An input node establishes the runtime context for the flow. There is an Input node for each of the many protocols that IBM Integration Bus supports. We will process an HTTP request with this flow so we need an **HTTPInput** node.
+    A message flow must begin with an Input node. An input node establishes the runtime context for the flow. There is an Input node for each of the many protocols that IBM App Connect Enterprise supports. We will process an HTTP request with this flow so we need an **HTTPInput** node.
 
     The **HTTPInput** node is in the **HTTP** drawer.
 11. Open the ![](./images/tkHTTPDrawer.png "HTTP Drawer") drawer by clicking on it.
@@ -266,11 +266,11 @@ The message flow is now complete. The next step is to test it. The integrated Fl
 |----|----|
 |**Key Concept:** The Flow Exerciser. Read the section below for additional information on the Flow Exerciser.|
 
-The IBM Integration Bus Flow Exerciser provides the ability to capture a "snapshot" of the message assembly as it is processed from node to node in a flow. These snapshots capture the state of the message, as well as other structures in the message assembly, highlighting the path of control through the message flow, providing an easy, visual way to test new or modified flows.
+The IBM App Connect Enterprise Flow Exerciser provides the ability to capture a "snapshot" of the message assembly as it is processed from node to node in a flow. These snapshots capture the state of the message, as well as other structures in the message assembly, highlighting the path of control through the message flow, providing an easy, visual way to test new or modified flows.
 
 The recorded snapshot includes all syntax trees in the message assembly -- message, local environment, environment and the exception list -- as well as several other properties such as a sequence number which give more context to the recorded message.
 
-When using the Flow Exerciser, recorded messages are displayed using an XML representation, which shows the structure and content of the logical tree at each point in the message flow. This provides a convenient visualization of the logical tree, and is a simplified version of the internal representation that IIB uses to represent the logical tree.
+When using the Flow Exerciser, recorded messages are displayed using an XML representation, which shows the structure and content of the logical tree at each point in the message flow. This provides a convenient visualization of the logical tree, and is a simplified version of the internal representation that ACE uses to represent the logical tree.
 
 Fields in the message tree can be modified, providing an easy way to exercise different paths in the message flow.
 
@@ -399,15 +399,15 @@ Navigate to the location of the file that you configured in the trace node, and 
 
 ![](./images/tkIntroLabTraceFile.png "IntroLabTrace File")
 
-22. Recall that you configured the Trace node to capture the “IIB-internal” view of the message tree.
+22. Recall that you configured the Trace node to capture the “ACE-internal” view of the message tree.
 
-Examine the Trace output – you see IIB-supplied parsers for interpreting the Properties (“WSPROPERTYPARSER”) and HTTP Input Header (“WSINPHDR”). Trace output allows you to see more detail about the structure of header and message fields, such as their type (CHARACTER, INTEGER, BOOLEAN, etc).
+Examine the Trace output – you see ACE-supplied parsers for interpreting the Properties (“WSPROPERTYPARSER”) and HTTP Input Header (“WSINPHDR”). Trace output allows you to see more detail about the structure of header and message fields, such as their type (CHARACTER, INTEGER, BOOLEAN, etc).
 
-While you see here IIB-supplied parsers for Properties (“WSPROPERTYPARSER”) and HTTP Input Header (“WSINPHDR”), what is missing is a parser for the payload – since **‘none’** is supplied, IIB treats the payload as a BLOB.
+While you see here ACE-supplied parsers for Properties (“WSPROPERTYPARSER”) and HTTP Input Header (“WSINPHDR”), what is missing is a parser for the payload – since **‘none’** is supplied, ACE treats the payload as a BLOB.
 
 ![](./images/tkIntoLabTraceNotepad.png "IntroLabTrace.txt")
 
-The next section will show how to tell IIB the payload is XML.
+The next section will show how to tell ACE the payload is XML.
 
 23. Close the Notepad window.
 24. Return to the recorded message, and click save.
@@ -442,7 +442,7 @@ The next section will show how to tell IIB the payload is XML.
 
 ![](./images/tkFlowExerciserDone.png)
 
-Continue to the next section to see how to tell IIB the payload is XML.
+Continue to the next section to see how to tell ACE the payload is XML.
 
 Message Models and Working with XML messages
 --------------------------------------------
@@ -470,25 +470,25 @@ Using the XML Parser
    The message flow will be modified so that it uses the XMLNSC parser to process the input message.
 3. On the **Properties** view at the bottom of the screen, click the **Input Message Parsing** tab. Since nothing was specified when the node was added, the Message domain (i.e. the parser) defaults to **BLOB** – which you saw in the Flow Exerciser as well as the Trace file.
 4. Click the pull-down for the **Message domain**. The various parsers are listed along with a short description. Depending on the Message domain selection, the other fields may be enabled or disabled.
-5. Select the **XMLNSC** parser. The **XMLNSC** parser is the most modern and most efficient of the three XML parsers supplied with IBM Integration Bus, and should be the parser of choice for most if not all message flows that handle XML messages (the others are there for backwards-compatibility).
+5. Select the **XMLNSC** parser. The **XMLNSC** parser is the most modern and most efficient of the three XML parsers supplied with IBM App Connect Enterprise, and should be the parser of choice for most if not all message flows that handle XML messages (the others are there for backwards-compatibility).
 
    ![](./images/tkInputMsgParseXMLNSC.png)
-6. ![](./images/tkSave.png "Save") Save the message flow (**Ctrl+S**).
+6. Save the message flow (**Ctrl+S**).
 
 <span id="_Toc423978436" class="anchor"></span>
 
 ### Key Idea: Parsers and Message Domains
 
 |----|----|
-| ![](../images/common/info.png) |**Key Idea:** Parsers and Message Domains. Read the section below for additional information on Parsers and Message Domains.|
+|**Key Idea:** Parsers and Message Domains. Read the section below for additional information on Parsers and Message Domains.|
 
-As discussed previously, IBM Integration Bus supplies a range of parsers to parse message content and serialize message trees in different formats.
+As discussed previously, IBM App Connect Enterprise supplies a range of parsers to parse message content and serialize message trees in different formats.
 
 A parser is called when the bit stream that represents an input request or event must be converted to the format that is used internally by the broker; this process is known as parsing. The input is a bit stream, and the output is a logical message syntax tree representation of the bit stream.
 
 A parser is also used to serialize a logical syntax tree structure into a bit stream (for example on an Output node). This process is known as serializing.
 
-Each parser is suited to a particular class of messages, known as a message domain. The following list contains some examples of the message domains used in IBM Integration Bus:
+Each parser is suited to a particular class of messages, known as a message domain. The following list contains some examples of the message domains used in IBM App Connect Enterprise:
 
 - XMLNSC – for XML documents
 - DFDL – for general text or binary data streams including industry standards
@@ -499,7 +499,7 @@ Now, with the parser for the payload identified, let’s re-run the Flow Exercis
 
 1. Start the Flow Exerciser.
 
-   ![](./images/tkStartFlowExerciser2.png "Start Flow Exerciser")
+   ![](./images/tkStartFlowExerciserToolTIp.png "Start Flow Exerciser")
 2. If the flow needs to be saved you will see this pop-up. Click **OK**.
 
    ![](./images/tkConfirmSaveFlow.png)
@@ -523,60 +523,41 @@ Now, with the parser for the payload identified, let’s re-run the Flow Exercis
    ![](./images/tkCloseTestProgressInfo.png)
 9. Click on the highlighted message.
 
-   ![](./images/tkClickHighlightedConnection.png)
+   ![](./images/tkInspectTestMsg.png)
 10. Note the difference between this run and the previous one.
 
     The Properties and HTTPInputHeader folders are there as before. But this time, instead of BLOB and UnknownParserName, you see the XMLNSC parser was used to successfully parse the message payload.
 
     ![](./images/tkRecordedMsgXMLStructure.png)
-11. Save this recorded message by clicking on the ![](./images/tkSaveIcon.png) save icon in the upper right corner.
-
-    **Note!** If the recorded message is closed, you can double-click the ![](./images/tkViewChangeSaveRecordedMsg.png) icon to reopen it.
-
-    ![](./images/tkSaveRecordedMsg.png)
-12. Call this recorded message ***Test message 2*** and click **OK**.
+11. Call this recorded message ***Test message 2*** and click **Save**.
 
     ![](./images/tkSaveRecordedXMLMsg.png)
-13. Close the Recorded Message window.
-
-    ![](./images/tkCloseRecordedMsg.png)
-14. Use the Windows Explorer to locate the file the Trace node was configured to write to.
-
-    Navigate to **C:\\IntroLabTrace.txt**, and double-click the file to open it.
+12. Close the Recorded Message window.
+13. Locate the file the Trace node was configured to write to and double-click the file to open it.
 
     ![](./images/tkIntroLabTraceFile.png)
-15. Scroll to the bottom of the Trace file.
+14. Scroll to the bottom of the Trace file.
 
-    Again you see the IIB-supplied parsers for interpreting the Properties and HTTP Input Header. But now you also see XMLNSC rather than BLOB for the payload parser, and you see the payload has been parsed and interpreted.
+    Again you see the ACE-supplied parsers for interpreting the Properties and HTTP Input Header. But now you also see XMLNSC rather than BLOB for the payload parser, and you see the payload has been parsed and interpreted.
 
     ![](./images/tkXMLTraceNotepad.png)
 
     One thing you will notice here is that all the XML fields are CHARACTER.
 
-    Without a schema, IIB has no way to tell if any of the fields are another type.
+    Without a schema, ACE has no way to tell if any of the fields are another type.
 
-    Next you will supply a schema, and tell IIB to validate the payload against that schema.
-16. Close the Notepad window.
-17. Stop the Flow Exerciser.
+    Next you will supply a schema, and tell ACE to validate the payload against that schema.
+15. Close the Notepad window.
+16. Stop the Flow Exerciser.
 
     ![](./images/tkCloseFlowExerciser.png)
-18. Click Yes on the pop-up.
+17. Click Yes on the pop-up.
 
     ![](./images/tkCloseFlowExerciserWarning.png)
-19. The Flow Exerciser is stopped, and the message flow is returned to editable mode.
+18. The Flow Exerciser is stopped, and the message flow is returned to editable mode.
 
     ![](./images/tkFlowExerciserDone.png)
-20. In the *Application Development* pane, expand the **Other Resources** folder. Double-click on the **IntroMessageFlow\_recordedMessage.xml** file.
-
-    ![](./images/tkOtherResourcesRecordedMessage.png)
-21. The XML editor will open. You should now see two testData messages, with the names you assigned to each.
-
-    ![](./images/tkTestDataMessages.png)
-22. Close the XML editor.
-
-    ![](./images/tkCloseRecordedMsgXML.png)
-
-    The next section will show how to tell IIB to use a message model (XML schema) to validate the message contents.
+19. The next section will show how to tell ACE to use a message model (XML schema) to validate the message contents.
 
 <span id="_Toc423978437" class="anchor"></span>
 
@@ -602,7 +583,7 @@ Applications typically use a combination of message formats, including those mes
 - XML including SOAP
 - REST APIs using JSON
 
-You can model a wide variety of message formats so that they can be understood by IBM Integration Bus message flows. When the message format is known, the broker can parse an incoming message bit stream and convert it into a logical message tree for manipulation by a message flow.
+You can model a wide variety of message formats so that they can be understood by IBM App Connect Enterprise message flows. When the message format is known, the broker can parse an incoming message bit stream and convert it into a logical message tree for manipulation by a message flow.
 
 Some message formats are self-defining and can be parsed without reference to a model. However, most message formats are not self-defining, and a parser must have access to a predefined model that describes the message if it is to parse the message correctly.
 
@@ -619,7 +600,7 @@ Even if your messages are self-defining, and do not require modeling, message mo
 - *Generation of documentation*.
 - *Provision of version control and access control* for message models by storing them in a central repository.
 
-Message models allow the full use of the facilities that are offered by IBM Integration Bus.
+Message models allow the full use of the facilities that are offered by IBM App Connect Enterprise.
 
 To speed up the creation of message models, importers are provided to read metadata such as C header files, COBOL copybooks, and EIS (Enterprise Information System, such as SAP®) metadata, and to create message models from that metadata. Additionally, predefined models are available for common industry standard message formats such as SWIFT, EDIFACT, X12, FIX, HL7, and TLOG.
 
@@ -686,13 +667,13 @@ Libraries can be either *Static* (embedded in the Applications or Services that 
 
 Consider using libraries if you want to share routines and definitions across multiple teams, projects, or brokers. Libraries are also useful if you need to use different versions of a coherent set of routines and definitions.
 
-Using a library is typically not necessary if you do not need to regularly reuse IBM Integration Bus routines or definitions.
+Using a library is typically not necessary if you do not need to regularly reuse IBM App Connect Enterprise routines or definitions.
 
 1. The XML Schema Editor should be opened for you after import.
 
    If it is not, double-click on **In\_Request.xsd** to open it.
 
-   ![](./images/tkOpenIn_Request_xsd.png)
+   ![](./images/tkIntroLab_LibFinish.png)
 2. The message model should now be visible in the XML Schema Editor.
 
    Double-click on the **In\_Request** element to view the message elements.
@@ -738,20 +719,20 @@ Using a library is typically not necessary if you do not need to regularly reuse
 
     You could resolve this warning, but for now you will ignore it.
 
-    However, this is a good point to spend a minute reviewing how IBM Integration Bus handles parsing.
+    However, this is a good point to spend a minute reviewing how IBM App Connect Enterprise handles parsing.
 
 ### Key Concept: Parse Timing
 
 |----|----|
-| ![](/common/info.png) |**Key Idea:** Parser Timing. Read the section below for information on On-Demand vs Immediate parsing.|
+| ![](/common/info.png|**Key Idea:** Parser Timing. Read the section below for information on On-Demand vs Immediate parsing.|
 
 Parsers such as the XMLNSC parser simplify your integration projects by allowing you to work with the *logical message tree*, as opposed to having to work directly with the wire-format message. And parsers that support messages models such as XMLNSC, DFDL, etc can also be used to validate the structure and/or content of messages.
 
 However, in many integration projects there is not a need to parse the entire message. For example, you may be simply routing a message based on a small subset of the information in the message (you will see an example of this in the next lab). Or, you may be modifying the message, but only in a trivial way. In such cases, parsing the entire message may incur needless overhead.
 
-For this reason, IBM Integration Bus gives you the ability to dictate when and to what extent parsing is to be performed. One example of this is *Parse Timing*.
+For this reason, IBM App Connect Enterprise gives you the ability to dictate when and to what extent parsing is to be performed. One example of this is *Parse Timing*.
 
-By default, Integration Bus will use *On-Demand parsing*. This means the message will only be parsed if elements within it are referenced, the parsing will occur at the time of reference (“on demand”), and the message will only be parsed up to the point of reference. In many cases, On-Demand parsing will save memory and processor overhead – particularly if referenced fields are near the beginning of a message.
+By default, App Connect Enterprise will use *On-Demand parsing*. This means the message will only be parsed if elements within it are referenced, the parsing will occur at the time of reference (“on demand”), and the message will only be parsed up to the point of reference. In many cases, On-Demand parsing will save memory and processor overhead – particularly if referenced fields are near the beginning of a message.
 
 On-Demand parsing involves a trade-off, though: If a message is malformed, that fact may not be discovered, as the malformation may be at a point in the message for which parsing was avoided. Similarly, if validation is requested, it will only be performed for those parts of the message that are parsed, and so an invalid message may not be detected.
 
@@ -793,7 +774,7 @@ The flow will now be run again. The trace output will then be examined.
    ![](./images/tkIntroMessageFlowView.png)
 2. Start the Flow Exerciser.
 
-   ![](./images/tkStartFlowExerciser2.png "Start Flow Exerciser")
+   ![](./images/tkStartFlowExerciserToolTIp.png "Start Flow Exerciser")
 3. If the flow needs to be saved you will see this pop-up. Click **OK**.
 
    ![](./images/tkConfirmSaveFlow.png)
@@ -817,7 +798,7 @@ The flow will now be run again. The trace output will then be examined.
    ![](./images/tkCloseTestProgressInfo.png)
 10. Click on the highlighted message.
 
-    ![](./images/tkClickHighlightedConnection.png)
+    ![](./images/tkInspectTestMsg.png)
 11. Note that the elements the XML schema identified as integers and date look no different here than in the previous test.
 
     But that’s to be expected, since the Flow Exerciser renders the message tree using an XML representation, regardless of their format, and elements in those messages as strings, again regardless of their actual type.
@@ -825,37 +806,14 @@ The flow will now be run again. The trace output will then be examined.
     We can return to the Trace file to see the actual physical representation of tree elements, to see if the schema was in fact used when parsing the message.
 
     ![](./images/tkRecordedMsgXMLTypes.png)
-12. Save this recorded message by clicking on the ![](./images/tkSaveIcon.png) save icon in the upper right corner.
-
-    **Note!** If the recorded message is closed, you can double-click the ![](./images/tkViewChangeSaveRecordedMsg.png) icon to reopen it.
-
-    ![](./images/tkSaveRecordedMsg.png)
-13. Call this recorded message Test message 3 and click OK.
-
-    ![](./images/tkSaveRecoredMsg3.png)
-14. Close the Recorded Message window.
-
-    ![](./images/tkCloseRecordedMsg.png)
-15. Use the Windows Explorer to locate the file the Trace node was configured to write to.
-
-    Navigate to **C:\\IntroLabTrace.txt**, and double-click the file to open it.
-
-    ![](./images/tkIntroLabTraceFile.png)
-16. Scroll to the bottom of the Trace file (or use **Ctl+End**) to view the new trace output
-
-    Again you see the IIB-supplied parsers for interpreting the Properties and HTTP Input Header. And you see XMLNSC for the payload parser, and you see the payload has been parsed and interpreted.
-
-    But this time, the parser used the schema when constructing the message tree, and correctly identified the type as Integer for the three indicated elements.
-
-    ![](./images/tkTraceFileXMLTypes.png)
-17. Close the Notepad window.
-18. Stop the Flow Exerciser.
+12. Close the message assembly editor
+13. Stop the Flow Exerciser.
 
     ![](./images/tkCloseFlowExerciser.png "Close Flow Exerciser")
-19. Click **Yes** on the pop-up.
+14. Click **Yes** on the pop-up.
 
     ![](./images/tkCloseFlowExerciserWarning.png)
-20. The Flow Exerciser is stopped, and the message flow is returned to editable mode.
+15. The Flow Exerciser is stopped, and the message flow is returned to editable mode.
 
     ![](./images/tkFlowExerciserDone.png)
 
