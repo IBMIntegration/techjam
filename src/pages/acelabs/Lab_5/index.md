@@ -1,5 +1,5 @@
 ---
-title: Distributing workload using ACE v11 Callable Flows
+title: Distributing workload using ACE v12
 ---
 [Return to main lab page](../../acelabs/Overview/)
 
@@ -7,7 +7,7 @@ title: Distributing workload using ACE v11 Callable Flows
 
 - Callable Flows
 - IBM App Connect on Cloud Pak for Integration (CP4I)
-- IBM App Connect Enterprise v11
+- IBM App Connect Enterprise v12
 
 ---
 
@@ -65,9 +65,15 @@ Click Finish:
 
 ![alt text][images/4.png]
 
-4\. The **MyCallableFlows** Application will be imported into your workspace, expand the application to see the message flow:
+4\. The **MyCallableFlows** Application will be imported into your workspace. Right click on the application and select Rename. Prepend your username to the application name. For example: Cody01_MyCallableFlows.
 
-![alt text][images/5.png]
+
+![](images/rename.png)
+
+![](images/rename2.png)
+
+
+
 
 ## 2.1.2 Review MyCallableFlows <a name="review_mycallableflows"></a>
 
@@ -123,9 +129,7 @@ i.e. The **server name** that the flow is running on; the **WorkPath** of the se
 
 In this section we use App Connect Designer to configure callable flows, to enable secure connectivity between flows running in IBM App Connect on IBM Cloud and in an integration server in your on-premises App Connect Enterprise.
 
-1\. Open a Firefox browser window and go to the following URL:
-
-[https://int-cp4i21-pn-cp4i21.apps.wedge.coc-ibm.com/](https://int-cp4i21-pn-cp4i21.apps.wedge.coc-ibm.com/)
+1\. Open a Firefox browser window and go to the Platform Navigator URL:
 
 **Note:** ***if you already have the CP4I Platform Navigator page open go to step 4***
 
@@ -154,7 +158,6 @@ In this section we use App Connect Designer to configure callable flows, to enab
 ![alt text][images/1.png9]
 
 8\. Take the agentx.json file we just downloaded and copy to the TEST_SERVER config location. Copy the json file to the location in the server directioy in the agentx directory.
-
 
 ![](images/agentx.png)
 
