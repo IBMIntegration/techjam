@@ -201,7 +201,7 @@ In this section we use App Connect Designer to configure callable flows, to enab
 
 7\. ![alt text][images/2.png8]
 
-8\. Here we will select the MyCallableFlows for the application.  This is the integration running on-prem.  The endpoint is the name of the CallableInput node in the flow.
+8\. Here we will select the the callable flow you imported and then renamed prepending your user Id for the application.  This is the integration running on-prem.  The endpoint is the name of the CallableInput node in the flow.
 
 We will add the data objects aName and aMessage that will pass data to the on-prem flow. For this click on the Add property link under Message.JSON.Data and add the aName and aMessage fields, click in the Edit Mappings Link and then on the three-row icon on the right to select the corresponding field from the model we created previously.
 
