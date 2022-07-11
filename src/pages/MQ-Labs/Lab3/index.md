@@ -209,8 +209,10 @@ We will not test every possibility, but the following are possible displays to e
     They can be downloaded from:
 
 
-    - Windows & Linux:
-      https://www.ibm.com/support/fixcentral/swg/selectFixes?parent=ibm%7EWebSphere&product=ibm/WebSphere/WebSphere+MQ&release=9.3.0.0&platform=All&function=all
+    - Windows:
+      https://www.ibm.com/support/fixcentral/swg/doSelectFixes?options.selectedFixes=9.3.0.0-IBM-MQC-Win64&continue=1
+    - Linux:
+      https://www.ibm.com/support/fixcentral/swg/doSelectFixes?options.selectedFixes=9.3.0.0-IBM-MQC-LinuxX64&continue=1  
     - MacOS
       https://developer.ibm.com/tutorials/mq-macos-dev/
 
