@@ -17,7 +17,7 @@ title: App Connect Designer Salesforce
 
 The purpose of this LAB is to show how to retrieve Salesforce Account Records using IBM App Connect Designer on IBM Cloud Pak for Integration. When prompted to log in to CP4I  use the username and password provided to you for this lab.
 
-## 2. Create a Designer Flow in CP4I to Call Salesforce  `<a name="create_a_designer_flow_in_cp4i_to_call_salesforce"></a>`
+## 2. Create a Designer Flow in CP4I to Call Salesforce  
 
 In this section we use App Connect Designer to create a flow that will be exposed as an API to connect and call Salesforce records.
 
