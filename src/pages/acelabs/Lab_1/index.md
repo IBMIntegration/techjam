@@ -13,7 +13,7 @@ title: App Connect Designer Salesforce
 
 ---
 
-# 1. Introduction `<a name="introduction"></a>`
+# 1. Introduction 
 
 The purpose of this LAB is to show how to retrieve Salesforce Account Records using IBM App Connect Designer on IBM Cloud Pak for Integration. When prompted to log in to CP4I  use the username and password provided to you for this lab.
 
