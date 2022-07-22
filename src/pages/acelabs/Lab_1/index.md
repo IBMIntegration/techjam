@@ -6,24 +6,18 @@ title: App Connect Designer Salesforce
 # Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [1. Introduction <a name="introduction"></a>](#1-introduction-)
-- [2. Create a Designer Flow in CP4I to Call Salesforce  <a name="create_a_designer_flow_in_cp4i_to_call_salesforce"></a>](#2-create-a-designer-flow-in-cp4i-to-call-salesforce--)
-  - [2a Testing the API flow <a name="testing_the_API_flow"></a>](#2a-testing-the-api-flow-)
-- [3. Deploying Your Designer Flow to App Connect Dashboard <a name="deploying_your_designer_flow_to_app_connect_dashboard"></a>](#3-deploying-your-designer-flow-to-app-connect-dashboard-)
+- [1. Introduction `<a name="introduction"></a>`](#1-introduction-)
+- [2. Create a Designer Flow in CP4I to Call Salesforce  `<a name="create_a_designer_flow_in_cp4i_to_call_salesforce"></a>`](#2-create-a-designer-flow-in-cp4i-to-call-salesforce--)
+  - [2a Testing the API flow `<a name="testing_the_API_flow"></a>`](#2a-testing-the-api-flow-)
+- [3. Deploying Your Designer Flow to App Connect Dashboard `<a name="deploying_your_designer_flow_to_app_connect_dashboard"></a>`](#3-deploying-your-designer-flow-to-app-connect-dashboard-)
 
 ---
 
-# 1. Introduction <a name="introduction"></a>
+# 1. Introduction `<a name="introduction"></a>`
 
 The purpose of this LAB is to show how to retrieve Salesforce Account Records using IBM App Connect Designer on IBM Cloud Pak for Integration. When prompted to log in to CP4I  use the username and password provided to you for this lab.
 
-## Pre-Lab: Gathering your Salesforce Credentials <a name="pre_lab"></a>
-
-For this lab, you will need to collect your Salesforce account details: Username, Password, Client Secret, and Client ID. You can learn how to obtain these values from this link:
-
-https://developer.ibm.com/integration/docs/app-connect/how-to-guides-for-apps/use-ibm-app-connect-salesforce/
-
-# 2. Create a Designer Flow in CP4I to Call Salesforce  <a name="create_a_designer_flow_in_cp4i_to_call_salesforce"></a>
+## 2. Create a Designer Flow in CP4I to Call Salesforce  `<a name="create_a_designer_flow_in_cp4i_to_call_salesforce"></a>`
 
 In this section we use App Connect Designer to create a flow that will be exposed as an API to connect and call Salesforce records.
 
@@ -59,11 +53,11 @@ From the Operations drop-down menu, select Add a Custom Operation. Here we will 
 8\. Customize the details of your API operation.
 
 * **Note**: You can optionally set a description for your individual API operation.
-  * Display Name: **Retrieve Accounts**
-  * HTTP Verb: **GET**
-  * Operation Name: **accounts**
+  * Display Name:**Retrieve Accounts**
+  * HTTP Verb:**GET**
+  * Operation Name:**accounts**
     * Note: The operation name will be a part of your API Endpoint URL and is therefore consumer-facing.
-  * Response body: **SalesforceRetrieve**
+  * Response body:**SalesforceRetrieve**
 
 9\. After customizing your API operation, the details should match the image below.
 
@@ -127,9 +121,9 @@ Note: If you accidendly click twice on the input field the popup suggestion wind
 
 21. Enter your userid followed by SFAccounts as name and then toggle the slider on the right from Stopped to Started.
 
-![images/20d.png]
+![images/20d.png][images/20d.png]
 
-## 2a Testing the API flow <a name="testing_the_API_flow"></a>
+## 2a Testing the API flow `<a name="testing_the_API_flow"></a>`
 
 1\. Once the flow switches to Started state a Test tab will appear. Click on it.
 
@@ -147,7 +141,7 @@ Note: If you accidendly click twice on the input field the popup suggestion wind
 
 ![alt text][images/2.png5]
 
-# 3. Deploying Your Designer Flow to App Connect Dashboard <a name="deploying_your_designer_flow_to_app_connect_dashboard"></a>
+# 3. Deploying Your Designer Flow to App Connect Dashboard `<a name="deploying_your_designer_flow_to_app_connect_dashboard"></a>`
 
 Now we can export our Designer flow App Connect Dashboard on Cloud Pak for Integration. Navigate to your App Connect Designer Dashboard so we can export our flow as a BAR file.
 
