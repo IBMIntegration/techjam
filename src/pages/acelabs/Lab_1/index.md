@@ -6,10 +6,10 @@ title: App Connect Designer Salesforce
 # Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [1. Introduction `<a name="introduction"></a>`](#1-introduction-)
-- [2. Create a Designer Flow in CP4I to Call Salesforce  `<a name="create_a_designer_flow_in_cp4i_to_call_salesforce"></a>`](#2-create-a-designer-flow-in-cp4i-to-call-salesforce--)
-  - [2a Testing the API flow `<a name="testing_the_API_flow"></a>`](#2a-testing-the-api-flow-)
-- [3. Deploying Your Designer Flow to App Connect Dashboard `<a name="deploying_your_designer_flow_to_app_connect_dashboard"></a>`](#3-deploying-your-designer-flow-to-app-connect-dashboard-)
+- [1. Introduction](#1-introduction-)
+- [2. Create a Designer Flow in CP4I to Call Salesforce  ](#2-create-a-designer-flow-in-cp4i-to-call-salesforce--)
+  - [2a Testing the API flow ](#2a-testing-the-api-flow-)
+- [3. Deploying Your Designer Flow to App Connect Dashboard ](#3-deploying-your-designer-flow-to-app-connect-dashboard-)
 
 ---
 
