@@ -123,7 +123,7 @@ Note: If you accidendly click twice on the input field the popup suggestion wind
 
 ![images/20d.png][images/20d.png]
 
-## 2a Testing the API flow `<a name="testing_the_API_flow"></a>`
+## 2a Testing the API flow 
 
 1\. Once the flow switches to Started state a Test tab will appear. Click on it.
 
@@ -141,7 +141,7 @@ Note: If you accidendly click twice on the input field the popup suggestion wind
 
 ![alt text][images/2.png5]
 
-# 3. Deploying Your Designer Flow to App Connect Dashboard `<a name="deploying_your_designer_flow_to_app_connect_dashboard"></a>`
+# 3. Deploying Your Designer Flow to App Connect Dashboard 
 
 Now we can export our Designer flow App Connect Dashboard on Cloud Pak for Integration. Navigate to your App Connect Designer Dashboard so we can export our flow as a BAR file.
 
