@@ -263,7 +263,7 @@ We will not test every possibility, but the following are possible displays to e
       export MQCCDTURL='/path-to-ccdt/ibm-mqha-ccdt.json'
       ```
       ```
-      export MQSSLKEYR='/path-to-keyfile/clientkey
+      export MQSSLKEYR='/path-to-keyfile/clientkey'
       ```
       ```
       amqsghac APPQ QUICKSTART
