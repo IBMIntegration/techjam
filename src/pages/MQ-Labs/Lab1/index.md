@@ -126,7 +126,7 @@ MQ has been deployed within the Cloud Pak for Integration to other containers de
    /opt/mqm/samp/bin/amqsputc app1 CODY01QM
    ```
 
-   This command is putting a message on queue **app1** on queue manager **mq00qs**.
+   This command is putting a message on queue **app1** on queue manager **CODY01QM**.
    Type a message such as:'
 
    ```
