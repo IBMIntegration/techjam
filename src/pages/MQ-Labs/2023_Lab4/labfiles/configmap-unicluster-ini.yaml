@@ -1,0 +1,22 @@
+﻿kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: unicluster-ini
+  namespace: cp4i  
+data:
+  AutoCluster.ini: >
+    # This ini configuration is used for all queue managers in the demo uniform
+    cluster and
+    # insterted into the qm.ini of each queue manager.
+    # This will add each queue manager into a Uniform Cluster called UNICLUSTER.
+    # The repository information will automatically make QM1 and QM2 the full
+    repository
+    # queue managers in the Uniform cluster.
+
+    AutoCluster:
+      Type=Uniform
+      Repository1Name=QM1
+      Repository1Conname=unicluster-qm1-ibm-mq.cp4i.svc(1414)
+      Repository2Name=QM2
+      Repository2Conname=unicluster-qm2-ibm-mq.cp4i.svc(1414)
+      ClusterName=UNICLUSTER
