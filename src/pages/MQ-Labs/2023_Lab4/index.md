@@ -1,5 +1,5 @@
 ---
-title: Lab 2 - Deploy a Cloud Native HA persistent IBM MQ Queue Manager on CP4I
+title: Lab 4 - Deploy an MQ Uniform Cluster on CP4I
 ---
 [Return to main lab page](../../MQ-Labs/Overview/)
 
@@ -26,7 +26,14 @@ In this lab you will connect an MQ client running on your laptop to the Native M
 
 We need to create an openshift route to allow external application to connect in the cluster using TLS.
 
-1. Click on the (+) icon at the top right of the Openshift console and paste the contents of the mqroute.yaml file included in this lab. Edit the route prepending your your userid to the name and hostname and then click Create.
+1. Click on the (+) icon at the top right of the Openshift console and paste the contents of the configmap-unicluster-ini.yaml file included in this lab.
+
+![](images/1_ocpconsole_newfile.png)
+
+
+Replace the namespace with your namespace (e.g. "cody01") and also replace it in the Conname parameter values and then click Create.
+
+![](images/2_change_namespace.png)
 
 Note: The first part of the host URL must match the name of the channel name in the queue manager (which was creted using the configmap) but all lower case. The "*.chl.mq.ibm.com*" is always fixed. It does not need to match any real domain name of the cluster. This setting is needed so that by using SNI over TLS the incomming requests can be routed not only to the correct port but also to the correct channel within the MQ pod.
 
