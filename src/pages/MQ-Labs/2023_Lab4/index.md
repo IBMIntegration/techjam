@@ -3,11 +3,9 @@ title: Lab 4 - Deploy an MQ Uniform Cluster on CP4I
 ---
 [Return to main lab page](../../MQ-Labs/Overview/)
 
-## Connect an external client to MQ running on OCP
+## Configure and deploy an MQ Uniform cluster in CloudPak for Integration.
 
-Connecting an MQ client running outside of the kubernetes cluster to a queue manager runnin on Openshift requires additional configuration.
-
-In this lab you will connect an MQ client running on your laptop to the Native MQ queue managers you configured on Lab 1.
+In this lab you will deploy an MQ Uniform Cluster in CP4I. The MQ Operator is not "uniform cluster aware" but you can easily configure a uniform cluster by providing INI and MQSC files to new queue managers deployed by the operator.
 
 * #NOTE: PRE-REQUISITE
   Make sure that you have an MQ Client installed in your local machine.
@@ -22,203 +20,188 @@ In this lab you will connect an MQ client running on your laptop to the Native M
 
     Follow any configuration instructions of the mq client after installation.
 
-  ## Set up the OCP Routes
-
-We need to create an openshift route to allow external application to connect in the cluster using TLS.
-
-1. Click on the (+) icon at the top right of the Openshift console and paste the contents of the configmap-unicluster-ini.yaml file included in this lab.
+1. Log into the OCP console
+2. Click on the (+) icon at the top right of the Openshift console and paste the contents of the configmap-unicluster-ini.yaml file included in this lab.
 
 ![](images/1_ocpconsole_newfile.png)
 
-Replace the namespace with your namespace (e.g. "cody01") and also replace it in the Conname parameter values and then click Create.
+3. Replace the namespace with your namespace (e.g. "cody01") and also replace it in the Conname parameter values and then click Create.
 
 ![](images/2_change_namespace.png)
 
-
-6. Click the plus sign once more to import the configmap-unicluster-qm1-mqsc.yaml file as shown in the following screenshot.
+4. Click the plus sign once more to import the configmap-unicluster-qm1-mqsc.yaml file as shown in the following screenshot.
 
 ![](images/3_importmqsc.png)
 
-9. Replace the namespace with your own namespace and also place it in the CONNAME parameter within the MQSC file.
+5. Replace the namespace with your own namespace and also place it in the CONNAME parameter within the MQSC file.
 
-![](images/4_replacenamespacemqsc.png)
+![](images/4_replacenamespamqsc.png)
 
-11. Repeat the same process to import the configmap-unicluster-qm2-mqsc.yaml and configmap-unicluster-qm3-mqsc.yaml files.
-
-13. After clicking on Configmaps under the Workloads section in the left menu bar you should see the configmaps that where created by importing the files
+6. Repeat the same process to import the configmap-unicluster-qm2-mqsc.yaml and configmap-unicluster-qm3-mqsc.yaml files.
+7. After clicking on Configmaps under the Workloads section in the left menu bar you should see the configmaps that where created by importing the files
 
 ![](images/5_allconfigmaps.png)
 
-15. Switch to the Platform Navigator console, log in and then click on Integration Instances.
+8. Switch to the Platform Navigator console, log in and then click on Integration Instances.
 
 ![](images/6_integrationinstances.png)
 
-17. Click on Create an Instance.
-
+9. Click on Create an Instance.
 
 ![](images/7_createii.png)
 
-19. Click on Messaging.
+10. Click on Messaging.
 
-![](images/8_messageing.png)
+![](images/8_messagingnext.png)
 
-21. Click on QuickStart
+11. Click on QuickStart
 
 ![](images/9_quickstart.png)
 
-23. Type unicluster-qm1 as name, accept the license and toggle the Advanced Settings switch.
+12. Type unicluster-qm1 as name, accept the license and toggle the Advanced Settings switch.
 
 ![](images/10_namelicense.png)
 
-
-25. Scroll down to the INI section. Click on Add+ to add items to the section. Type AutoCluster.ini in the Advanced:Items text box and press Enter. (A gray bouble shoud appear arund the text). Then select unicluster-ini in the Advanced:Name selection box.
+13. Scroll down to the INI section. Click on Add+ to add items to the section. Type AutoCluster.ini in the Advanced:Items text box and press Enter. A gray bouble shoud appear arund the text). Then select unicluster-ini in the Advanced:Name selection box.
 
 ![](images/11_uniclusterini.png)
 
-27. Scroll further down into the MQSC section and click on Add+. Type UniCluster.mqsc in the Advanced:Items section and press Enter and then select unicluster-qm1-mqsc in the Advanced:Name selection box. Finally, type QM1 as the queue manager name and click create on the top right
+14. Scroll further down into the MQSC section and click on Add+. Type UniCluster.mqsc in the Advanced:Items section and press Enter and then select unicluster-qm1-mqsc in the Advanced:Name selection box. Finally, type QM1 as the queue manager name and click create on the top right
 
 ![](images/12_mqsc.png)
 
-   
-29. Repeat the process for another queue manager called QM2. Make sure you select the corresponding mqsc configmap.
-30. You should end up with two running queue managers.
+15. Repeat the process for another queue manager called QM2. Make sure you select the corresponding mqsc configmap.
+16. You should end up with two running queue managers.
 
- ![](images/13_2qm.png)
+![](images/13_2qm.png)
 
- The INI and MQSC cofigmaps you provided included the configuration so that a Uniform cluster is created between both queue managers. Unlike traditional MQ queue managers where you have to select a couple a full repositories and then manually create channels and add additional queue managers by starting the channeles, a Uniform Cluster has automatic dynamic configuration. New queue mananagers just need to boot up and they will be automatically added to the cluster.
+The INI and MQSC cofigmaps you provided included the configuration so that a Uniform cluster is created between both queue managers. Unlike traditional MQ queue managers where you have to select a couple a full repositories and then manually create channels and add additional queue managers by starting the channeles, a Uniform Cluster has automatic dynamic configuration. New queue mananagers just need to boot up and they will be automatically added to the cluster.
 
-34. Go back to the OCP console. Under workloads select pods and type Uni in the filter text box.
-You should see the two queue managers running. Click on the first queue manager.
+17. Go back to the OCP console. Under workloads select pods and type Uni in the filter text box.
+    You should see the two queue managers running. Click on the first queue manager.
 
- ![](images/14qmpos.png)
+![](images/14_qmpods.png)
 
-38. Click on Terminal
- ![](images/15terminal.png)
+19. Click on Terminal
 
-39. Type runmqsc and then type DISPLAY QMGR REPOS
+![](images/15_terminal.png)
 
- ![](images/16displayrepo.png)
+20. Type runmqsc and then type DISPLAY QMGR REPOS
+
+![](images/16d_displayrepo.png)
 
 It will show that that queue manager is a full repository for a cluster called UNICLUSTER (which was defined in the INI file)
 
-39. Type DISPLAY CHANNEL(UNI*)
+20. Type DISPLAY CHANNEL(UNI*)
 
- ![](images/17_displaychannel.png)
+![](images/17_displaychannel.png)
 
+It will show a Cluster receiever and a cluster sender channel. Those are the channels connecting the two queue managers.
 
- It will show a Cluster receiever and a cluster sender channel. Those are the channels connecting the two queue managers.
+21. Repeat the queue manager creation process once again in the Platform Navigator console but for a queue manager called QM3. Make sure you select the corresponding mqsc configmap when required.
+22. Go back to the OCP console and select Pods. You should now see 3 pods.
 
-43. Repeat the queue manager creation process once again in the Platform Navigator console but for a queue manager called QM3. Make sure you select the corresponding mqsc configmap when required.
+![](images/18_3qms.png)
 
-45. Go back to the OCP console and select Pods. You should now see 3 pods.
+23. Click on the qm3 pod and go into the terminal
+24. Type runmqsc and then type DISPLAY QMGR REPOS and then DISPLAY CHANNEL(UNI*)
 
-47. Click on the qm3 pod and go into the terminal
+![](images/19_displayrepo.png)
 
- ![](images/18_3qms.png)
-
-49. Type runmqsc and then type DISPLAY QMGR REPOS and then DISPLAY CHANNEL(UNI*)
-
- ![](images/19_displayrepo.png)
-
- You will see that now the REPOS parameter is empty. This is because the new queue manager is not a ful repository for the cluster. You will also see that now there are 3 channels. One cluster receiver with its name and two cluster senders connecting it to the other two queue managers.
+You will see that now the REPOS parameter is empty. This is because the new queue manager is not a ful repository for the cluster. You will also see that now there are 3 channels. One cluster receiver with its name and two cluster senders connecting it to the other two queue managers.
 
 Now we will allow external connectivity into the cluster so that you can connect an mq client running in your laptop to the queue manager uniform cluster.
 On Lab #2 we created an OCP route and TLS on MQ to connect to the queue manager. Now we are going to take another approach. We will be creating a LoadBalancer object and will not be using TLS.
 
 With this approach each queue manager will have its own external IP address. Even though we will be creating a LoadBalancer there will be no loadbalacing performed by an external load balancer into the pods as each queue manager pod is unique. It is the quemanagers themselves who balance the client connections in to them once a client connects to any of them. The client is aware of the ip addresses of each queue manager by using a CCDT file.
 
-56. Import the  unicluster-qm1-lb.yaml, unicluster-qm2-lb.yaml and unicluster-qm1-lb.yaml files
+25. Import the  unicluster-qm1-lb.yaml, unicluster-qm2-lb.yaml and unicluster-qm1-lb.yaml files
 
- ![](images/20_importlbyaml.png)
+![](images/20_importlbyaml.png)
 
-59. In the OCP console click on services within the Networking section in the left menu and type -lb in the filter text box. Click on the unicluster-qm1-lb service. 
+26. In the OCP console click on services within the Networking section in the left menu and type -lb in the filter text box. Click on the unicluster-qm1-lb service.
 
- ![](images/21_lblist.png)
+![](images/21_lblist.png)
 
-60. You will see that it has an external IP address assigned. Take note of it. 
+27. You will see that it has an external IP address assigned. Take note of it.
 
- ![](images/22_getip.png)
+![](images/22_getip.png)
 
 Do the same to get the ip address of the unicluster-qm2-lb service.
 
+28. Edit the ibm-mq-ccdt.json file and replace the two exiting IP addresses with the two ip address you got from your service instances. Note that they are repeated once more. This is because the client shoudl be able to  connect by either providing a specific queue manager name (with no load balancing nor failover) or providing a wildcard name.
 
-60. Edit the ibm-mq-ccdt.json file and replace the two exiting IP addresses with the two ip address you got from your service instances. Note that they are repeated once more. This is because the client shoudl be able to  connect by either providing a specific queue manager name (with no load balancing nor failover) or providing a wildcard name.
+![](images/23_ccdt.png)
 
+29. In your laptop open a new terminal window and run the following commands replacing "*path-to-ccdt*" with the folders where you downloaded the ibm-mq-ccdt.json file:
+    Note: If your laptop is running MacOS Catalina or later run the bash command. This is because the fault command shell (zsh) has issues when typing "*" as part of command.
 
- ![](images/23_ccdt)
+![](images/24_bashexport.png)
 
+```
+export MQCCDTURL='/path-to-ccdt/ibm-mq-ccdt.json'
+```
 
-
-
-56. Open a new terminal window and run the following commands replacing "*path-to-ccdt*" and *"path-to-keyfile"* with the folders where you downloaded the keyfile and connection file:
-
-    ```
-    export MQCCDTURL='/path-to-ccdt/ibm-mqha-ccdt.json'
-    ```
-
-    ```
-    export MQSSLKEYR='/path-to-keyfile/clientkey'
-    ```
-57. Run the follwing command in the terminal window:
+30. Run the follwing command in the terminal window:
 
     ```
-    amqsputc APPQ1 QUICKSTART
+    amqsputc Q1 *ANY_QM
     ```
 
-    The sample program amsputc will put the messages to queue **APPQ1** which has a default persistence defined as persistent. These messages should still be available after a failover.
-58. Type any message and press Enter. Type another message and press Enter twice to disconnect from the queue manager. Remember the text of the messages you typed.
-59. In the terminal window enter the following commands replacing "*path-to-ccdt*" and *"path-to-keyfile"* with the folders where you downloaded the keyfile and connection file:
+    The sample program amsputc will put the messages to queue **Q1** . These messages should still be available after a failover.
+    Type a few messages and press Enter after each one. Type another message and press Enter twice to disconnect from the queue manager.
 
-    ```
-    export MQCCDTURL='/path-to-ccdt/ibm-mqha-ccdt.json'
-    ```
+![](images/25_amqsput.png)
 
-    ```
-    export MQSSLKEYR='/path-to-keyfile/clientkey'
-    ```
 
-    ```
-    amqsghac APPQ QUICKSTART
-    ```
+31. Go back to Platform Navigator and into the Intgration Instances section. Click on the unicluster-qm1 queue manager.
 
-    ![](assets/20220710_174848_getmsgs.png)
+![](images/26_clickinstance.png)
 
-    The sample program amqsghac starts running and will wait for messages to arrive on queue **APPQ**.
-60. Open another terminal window and type the following command:
 
-    ```
-    amqsphac APPQ QUICKSTART
-    ```
-61. The sample program amqsphac will connect to MQ and start sending messages incessantly.
-62. Return to the window where *amqsghac* is running. You should get a list of all the messages that have been previously sent before running the command and the ones that are being sent after.
+32. Click on Queues
 
-    ![](assets/20220710_174809_QMputget.png)
-63. Go back to the OCP console and check the status of the pods:
-    ![](assets/20220709_223045_viewqms.png)
-64. Delete the running pod
+![](images/27_queues.png)
 
-    ![](assets/20220710_172025_deletepod.png)
 
-Once the active pod is deleted, the running programs will then reconnect to the other pod for it to take over.
+33. Check the queue depth of Q1. It should show the number of messages you sent from the command line using amqsputc.
 
-![](./images/image29.png)
+![](images/28_curpdeth.png)
 
-16. Return to the browser tab where OCP is open. In your project, click the drop-down for *Workloads* and select *Pods*. Enter your queue manager name in the *Name* field to filter out the rest. You will see the now a different pod is in 1/1 Ready state.
+34. Go back to the OCP console, click in statefulsets within the Workloads section of the left menu, type Uni in the filter text box and click on the unicluster-qm1-ibm-mq statefulset
 
-    ![](./images/image31a.png)
-17. Return the Platform Navigator home page and click on on your queue manager name in the Messaging box
+![](images/29_statefulset.png)
 
-    ![](assets/20220710_174446_PNMessaging.png)
-18. Click on Manage.
+35. Click on the down arrow next to the wheel to scale down the statefulset to 0 pods.
 
-    ![](assets/20220710_174615_QMManage.png)
-19. Verify that queue **APPQ1** still has the number of messages you put to the queue earlier.
+![](images/30_scaledown.png)
 
-    ![](./images/image56.png)
-20. Click the hyperlink for the queue to verify that those are the messages you created.
 
-    ![](./images/image57.png)
+36. Return to the terminal window on your browser and put more messages.
+
+![](images/31_put2.png)
+
+```
+amqsputc Q1 *ANY_QM
+```
+
+
+37. Return the Platform Navigator intgration instances. You should see that unicluster-qm1 shows an error because we removed all pods. Click on unicluster-qm2.
+
+![](images/32_qmlist2.png)
+
+38. Click on Queues.
+
+![](images/33_queues.png)
+
+39. Check the queue depth of Q1. It should show the number of messages you sent from the command line using amqsputc. It should show the number of messages you put the second time.
+
+Q1 exists on all 3 queue managers. Unlike Lab #1 these queue managers are not replicas of each other for HA purposes. They equal but independent queue managers. The MQ client successfuly failed over to the second queue manager when the first went down but each queue manager has it´s own set of messages. If more clients were to be connected the connections will get load balanced across all queue managers. Unifom clusters provide scaling/load balacing and continuos avaibility for new transactions. It can be combined with MQ Native HA so that data HA is provided as well. In that case each of the members of the Uniform cluster will have 2 additional passive pods.
 
 ## Congratulations
 
-You have completed this lab for MQ on CP4I
+You have completed this lab for MQ Uniform clusters on CP4I.
+
+## Chalenge
+
+Combine all 3 MQ labs: Add Native HA to the Uniform Cluster members and configure OCP routes and TLS for each of the queue managers.
