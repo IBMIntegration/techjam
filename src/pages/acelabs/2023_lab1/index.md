@@ -21,13 +21,18 @@ In this section we use a backup that was extracted from an IIB v10 instance runn
 For your reference, the following command was used:
 ![](images/2_winbackup.png)
 
-Download the backup file from http://TESTNODE_Administrator_210825_083432.zip and save it to local folder in your workstation.
+Download the backup file from [TESTNODE_Administrator_210825_083432.zip](../labafiles/TESTNODE_Administrator_210825_083432.zip]) and save it to local folder in your workstation.
 
 1. Launch the App Connect Enterprise Toolkit.
 2. Open the App Connect Enteperprise console which is a pre-configured command shell environment that allows you to run App Connect configuration commands.
 
-   - On MacOS you can open it by clicking on IBM App Connect Enterprise in the menu bar while the Toolkit window is selected and clicking on Open Integration Console.![](images/1_OpenConsoleMac.png)
-   - On Windows you can open it by clicking on the IBM App Connect Enterprise Console in the start menu.![](images/1_1_OpenConsoleWindows.png)
+   - On MacOS you can open it by clicking on IBM App Connect Enterprise in the menu bar while the Toolkit window is selected and clicking on Open IntegrationConsole.
+
+   ![](images/1_OpenConsoleMac.png)
+
+   - On Windows you can open it by clicking on the IBM App Connect Enterprise Console in the start menu.
+
+   ![](images/1_1_OpenConsoleWindows.png)
 3. Run the mqsiextractcomponents command passing the location of the backup file you downloaded. For example:
 
 `mqsiextractcomponents --backup-file /Users/rramos/Downloads/TESTNODE_Administrator_210825_083432.zip  --source-integration-node TESTNODE_Administrator --target-integration-node ACENODE1`
@@ -38,9 +43,9 @@ Download the backup file from http://TESTNODE_Administrator_210825_083432.zip an
 
 `mqsistart ACENODE1`
 
-5. Switch to the ACE Toolkit window and expand the integration node which is on the bottom left panel. You should see that the ACENODE1 integration node was created and it already has applications and policies deployed to it.  
+5. Switch to the ACE Toolkit window and expand the integration node which is on the bottom left panel. You should see that the ACENODE1 integration node was created and it already has applications and policies deployed to it.
 
-![](images/7_toolkitcontents.png)
+![](images/6_toolkitcontents.png)
 
 6. Expand the DefaultPolicies folder. You will see that 3 policies where created and deployed.
 
@@ -67,20 +72,19 @@ Integration Nodes are typically used on traditional VM or Baremetal IIB/ACE depl
 `mqsistop ACENODE1`
 
 8. Create a folder in your hard drive. This folder is called the work directory and will hold all configuration and runtime files for your integration server. In this example we called it defaultIS
-
 9. Run the mqsiextract components command again but now we will select the "default" integration server and deploy it to target working directory. Replace the target-work-directory parameter with the folder you previously created in your hard drive.
 
 `mqsiextractcomponents --backup-file /Users/rramos/Downloads/TESTNODE_Administrator_210825_083432.zip --source-integration-node TESTNODE_Administrator  --source-integration-server default --target-work-directory /Users/rramos/Documents/defaultIS`
 
 ![](images/10_extractIS.png)
 
-10. Start the integration server by running the IntegrationServer command and passing the location of the work directory as a parameter;
+11. Start the integration server by running the IntegrationServer command and passing the location of the work directory as a parameter;
 
 ![](images/11_startIS.png)
- 
+
 Note: You might get firewall warnings from your local OS. Click on allow connections to the integration server.
 
-You might notice that is shows some errors because a windows folder used by a FileInputNode does not exist on your laptop. Later on we'll see can we can prevent these types of issues from happeing.
+You might notice that is shows some errors because a windows folder used by a FileInputNode does not exist on your laptop. Later on we'll see can we can prevent these types of issues from happening.
 
 11. Switch back to the ACE Toolkit and right click on Integration Servers on bottom left panel to add your new Integration Server.
 
@@ -90,15 +94,14 @@ You might notice that is shows some errors because a windows folder used by a Fi
 
 ![](images/13_connectToolkitparams.png)
 
-13. Expand the integrawtion server. You should see the deployed content similarly as we saw while migrating the entire integration node.
+13. Expand the integration server. You should see the deployed content similarly as we saw while migrating the entire integration node.
 
-![](images/14_expandcontentIS.png)
+![](images/14_expandcontentsIS.png)
 
 During a migration project ideally we should check first for compatibility of the existing code with the new ACE version and new target deployment architecture as containers or CP4I. For this IBM provides IBM Transformation Advisor with a plugin to analyze IIB backups or BAR files and generate migration reports.
 We will run transformation advisor against our IIB v10 backup to see what we might to change before deploying it into containers.
 
 14. Create another folder somewhere in your hard drive. This folder will hold the transformation advisor reports.
-
 15. Go back to the Integration Console and issue the following command to set up the environment variable that points it to the report folder location (replace the folder with yours):
 
 `export TADataCollectorDirectory=/Users/rramos/Documents/TADir`
@@ -111,7 +114,7 @@ We will run transformation advisor against our IIB v10 backup to see what we mig
 
 17. Navigate to the folder you created to store the reports and expand the contents.
 
-![](images/16_browsecontentsTA.png)
+![](images/16_browserconentsTA.png)
 
 18. Double-click on the recommendations.html file:
 
@@ -119,8 +122,8 @@ We will run transformation advisor against our IIB v10 backup to see what we mig
 
 You will see some recommendations. One of them, for example, is to not use local folders for your file input node (the error we where getting) but rather a network shared file system. This would make it be more container-friendly and portable.
 
- ## Congratulations
+## Congratulations
 
-  You have completed the IIB to ACE migration lab.
+You have completed the IIB to ACE migration lab.
 
 [Return to main lab page](/acelabs/Overview)
