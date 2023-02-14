@@ -1,0 +1,12 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v1
+metadata:
+  name: helloworldhpa
+  namespace: cp4i
+spec:
+  scaleTargetRef:
+    kind: IntegrationServer
+    name: helloworld-cody01
+  minReplicas: 1
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 10
