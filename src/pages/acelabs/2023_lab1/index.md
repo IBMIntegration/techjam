@@ -22,7 +22,7 @@ In this section we use a backup that was extracted from an IIB v10 instance runn
 For your reference, the following command was used:
 ![](images/2_winbackup.png)
 
-Download the backup file from [TESTNODE_Administrator_210825_083432.zip](../labafiles/TESTNODE_Administrator_210825_083432.zip]) and save it to local folder in your workstation.
+Download the backup file from [TESTNODE_Administrator_210825_083432.zip](./labfiles/TESTNODE_Administrator_210825_083432.zip) and save it to local folder in your workstation.
 
 1. Launch the App Connect Enterprise Toolkit.
 2. Open the App Connect Enteperprise console which is a pre-configured command shell environment that allows you to run App Connect configuration commands.
