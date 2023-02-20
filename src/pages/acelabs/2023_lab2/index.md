@@ -14,7 +14,7 @@ The purpose of this LAB is to show how to configure autoscaling of Integration S
 1. Log in to Platform Navigator with your assigned user id.
 
    ![](images/1_loginCP4i.png)
-2. Click on the Ace Dashboard intance under Integrations
+2. Click on the Ace Dashboard intance under Integrations. Note: It migh have a different name  than the one in the screenshot in the cluster you are using.
 
    ![](images/2_Integrations.png)
 3. Click on the Dashboard icon
@@ -23,10 +23,10 @@ The purpose of this LAB is to show how to configure autoscaling of Integration S
 4. Click on Create Server
 
    ![](images/4_createserver.png)
-5. Click on QuickStart
+5. Click on Quick Start Integration and then click Next
 
    ![](images/5_quickstart.png)
-6. Select the HellowWorld bar file
+6. Select the HellowWorld bar file from the dropdown selection box and then click Next
 
    ![](images/6_selectHellow.png)
 7. Click on Next in the Configurations step
@@ -39,11 +39,11 @@ The purpose of this LAB is to show how to configure autoscaling of Integration S
 
 ![](images/9_advancedSettings.png)
 
-10. Scroll down and reduce  cpu limit and cpu request to 200m. We are doing doing this so it'll be easier to reach target resource usage limit for autoscaling
+10. Scroll down and reduce  cpu limit and cpu request to 200m. We are doing doing this so it'll be easier to reach target resource usage limit for autoscaling. Once you are down changing the values click Create on the top right.
 
 ![](images/10_limits.png)
 
-11. Wait until the Integration Server is ready. It might take a minute or two. You might need to refresh your browser window to confirm that it is ready.
+11. Wait until the Integration Server is ready. It might take a minute or two. You may need to refresh your browser window to confirm that it is ready.
 
 ![](images/11_waitready.png)
 
@@ -94,7 +94,8 @@ You should get a successul response (HTTP code 200). Select and copy the URL.
 Now we will generate additional load with a rather rudementary method but should work for this lab without needing additional tools. Ideally we would used specialized tools such as LoadRunner.
 
 18. Press and keep pressing the refresh button/shortcut of your brower for about 10 seconds. Note: In windows it would be the F5 key. On a mac it would be command+R.
-20. Go back to the Openshift console and check the pods. If  utilization CPU goes beyond 0.02 cores (10% of 200 milicores) you should see that at least new pod was automatically created.
+
+20. Go back to the Openshift console and check the pods. Type is-hellow as filter and find your pods. If  utilization CPU goes beyond 0.02 cores (10% of 200 milicores) you should see that at least new pod was automatically created.
 
 ![](images/18_2pods.png)
 
