@@ -5,166 +5,110 @@ title: ACE Integration Server Autoscaling on CP4I
 
 ---
 
-#  Introduction
+# Introduction
 
 The purpose of this LAB is to show how to configure autoscaling of Integration Server instances based on cpu utilization.
 
-##  Deploy the an Integration Server on CP4i
+## Deploy the an Integration Server on CP4i
 
 1. Log in to Platform Navigator with your assigned user id.
 
-2. 
-
-
    ![](images/1_loginCP4i.png)
+2. Click on the Ace Dashboard intance under Integrations
 
-   ![](images/2_intgrations.png)
+   ![](images/2_Integrations.png)
+3. Click on the Dashboard icon
 
    ![](images/3_dashoard.png)
+4. Click on Create Server
 
-    ![](images/4_createserver.png)
+   ![](images/4_createserver.png)
+5. Click on QuickStart
 
-   ![](images/5_quisckstart.png)  
+   ![](images/5_quickstart.png)
+6. Select the HellowWorld bar file
 
-   ![](images/6_SellectHellow.png)
-
+   ![](images/6_selectHellow.png)
+7. Click on Next in the Configurations step
 
    ![](images/7_confnext.png)
+8. Rename the integration server to is-helloworld-`<your userid>`. For example is-helloworld-cody01
 
-   [](images/8_renameIS.png)
+   ![](images/8_renameIS.png)
+9. Click on the Advanced Settings toggle switch on the left so it turns green.
 
-   [](images/9_advancedSettings.png)
+![](images/9_advancedSettings.png)
 
+10. Scroll down and reduce  cpu limit and cpu request to 200m. We are doing doing this so it'll be easier to reach target resource usage limit for autoscaling
 
-   [](images/910_limits.png)
+![](images/10_limits.png)
 
+11. Wait until the Integration Server is ready. It might take a minute or two. You might need to refresh your browser window to confirm that it is ready.
 
-   [](images/11_waitready.png)
+![](images/11_waitready.png)
 
+12. Open the OpenShift console in an new browser window or tab and go to Workloads->pods on the left menu bar. Once in the pod list type is-hello as filter and look for your Integration Server name. You should see just one pod for your Integration Server.
 
-   [](images/12_pods.png)
+![](images/12_pods.png)
 
+13. Click on the (+) sign on the top right of the Openshift Console to import a yaml file. Insert the following yaml, append your userid to the name and to the name of the target referece:
 
-   [](images/13_importyaml.png)
+![](images/13_importyaml.png)
 
+```
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v1
+metadata:
+name: helloworldhpa-
+namespace: cp4i
+spec:
+scaleTargetRef:
+kind: IntegrationServer
+name: is-helloworld-
+apiVersion: appconnect.ibm.com/v1beta1
+minReplicas: 1
+maxReplicas: 4
+targetCPUUtilizationPercentage: 10
+```
 
-   [](images/14_api.png)
+This creates a Horizontal Pod Autoscaler that will increase the number of replicas of the pod when average CPU utilization goes beyond 20%. Note that the target of the pod autoscaler is not a base k8s object such as deployment or statefuleset but rather an ACE Integration Server Custom Definition.
 
-   [](images/15_getapi.png)
+14. Go back to the ACE Dashboard window and click on your Integration server and then click on the HellowWorldAPI API
 
-   [](images/16_tryit.png)
+![](images/14_api.png)
 
-   [](images/17_browser.png)
+15. Click on the GET /Customer method
 
-   [](images/18_2pods.png)
+![](images/15_getapi.png)
 
-   [](images/19_hpa.png)
+16. Click on Tryit and then Send.
 
-   [](images/20_desiredreplica.png)
+![](images/16_tryit.png)
 
-Download the backup file from [TESTNODE_Administrator_210825_083432.zip](../labafiles/TESTNODE_Administrator_210825_083432.zip]) and save it to local folder in your workstation.
+You should get a successul response (HTTP code 200). Select and copy the URL.
 
-1. Launch the App Connect Enterprise Toolkit.
-2. Open the App Connect Enteperprise console which is a pre-configured command shell environment that allows you to run App Connect configuration commands.
+17. Open a new browser tab or window and paste the URL. You should see the same reponse.
 
-   - On MacOS you can open it by clicking on IBM App Connect Enterprise in the menu bar while the Toolkit window is selected and clicking on Open IntegrationConsole.
+![](images/17_browser.png)
 
-   ![](images/1_OpenConsoleMac.png)
+Now we will generate additional load with a rather rudementary method but should work for this lab without needing additional tools. Ideally we would used specialized tools such as LoadRunner.
 
-   - On Windows you can open it by clicking on the IBM App Connect Enterprise Console in the start menu.
+18. Press and keep pressing the refresh button/shortcut of your brower for about 10 seconds. Note: In windows it would be the F5 key. On a mac it would be command+R.
+20. Go back to the Openshift console and check the pods. If  utilization CPU goes beyond 0.02 cores (10% of 200 milicores) you should see that at least new pod was automatically created.
 
-   ![](images/1_1_OpenConsoleWindows.png)
-3. Run the mqsiextractcomponents command passing the location of the backup file you downloaded. For example:
+![](images/18_2pods.png)
 
-`mqsiextractcomponents --backup-file /Users/rramos/Downloads/TESTNODE_Administrator_210825_083432.zip  --source-integration-node TESTNODE_Administrator --target-integration-node ACENODE1`
+20. In the OpenShift Console go to Workloads and then HorizontalPodAutoscalers. Click on your horizontal pod autoscaler.
 
-![](images/4_extract.png)
+![](images/19_hpa.png)
 
-4. Start the newly created integration node by typing:
+21. Switch to the YAML view. You will see that the desired replica count is now greater than 1.
 
-`mqsistart ACENODE1`
+![](images/20_desiredreplica.png)
 
-5. Switch to the ACE Toolkit window and expand the integration node which is on the bottom left panel. You should see that the ACENODE1 integration node was created and it already has applications and policies deployed to it.
-
-![](images/6_toolkitcontents.png)
-
-6. Expand the DefaultPolicies folder. You will see that 3 policies where created and deployed.
-
-![](images/7_policies.png)
-
-Policies did not exist in IIB v10. Configuration options for some nodes and services where provided trough node-managed ConfigurableServices which no longer exist in ACE v12. The mqsiextractcomponents command automatically created policies for such configurations and stored them in the DefaultPolicies project. Because they are stored in the DefaultPolicies project node properties in the integration flows just need to reference them by name without needing to provide a policy project. This is taken care for you automatically by the migraton tool.
-
-If you choose to do a parallel (new code deployment) migration then you will need to start from your v10 source code and import a copy/fork into ACE Toolkit v12. That source code will not be policiy-aware so will be missing the policies. You can created then from scratch by hand but it is also usefull to run the extract command and grab the auto generated policies from there.
-
-File location varies depending it the target is an integation node or stand-alone integration server and if the former then varies per operating system type.
-For example these are locations on macOS and Windows for an integration Node:
-
-![](images/8_policylocationMac.png)
-![](images/9_PolicyLocationWin.png)
-
-On stand-alone integration server it will be located within the work directory of the integration server.
-
-So far we have migrated the v10 Integration Node into a new V12 Integration node. Now we will pick a particular integation server from the v10 to a v12 stand-alone integation server.
-
-Integration Nodes are typically used on traditional VM or Baremetal IIB/ACE deployments. Stand alone integration servers can be deployed in VMs as well but are more commonly used on containers.
-
-7. Stop the Integration node by running the following command in the ACE Intgration console:
-
-`mqsistop ACENODE1`
-
-8. Create a folder in your hard drive. This folder is called the work directory and will hold all configuration and runtime files for your integration server. In this example we called it defaultIS
-9. Run the mqsiextract components command again but now we will select the "default" integration server and deploy it to target working directory. Replace the target-work-directory parameter with the folder you previously created in your hard drive.
-
-`mqsiextractcomponents --backup-file /Users/rramos/Downloads/TESTNODE_Administrator_210825_083432.zip --source-integration-node TESTNODE_Administrator  --source-integration-server default --target-work-directory /Users/rramos/Documents/defaultIS`
-
-![](images/10_extractIS.png)
-
-11. Start the integration server by running the IntegrationServer command and passing the location of the work directory as a parameter;
-
-![](images/11_startIS.png)
-
-Note: You might get firewall warnings from your local OS. Click on allow connections to the integration server.
-
-You might notice that is shows some errors because a windows folder used by a FileInputNode does not exist on your laptop. Later on we'll see can we can prevent these types of issues from happening.
-
-11. Switch back to the ACE Toolkit and right click on Integration Servers on bottom left panel to add your new Integration Server.
-
-![](images/12_connectToolkitIS.png)
-
-12. Type localhost as Host name and 7600 as port.
-
-![](images/13_connectToolkitparams.png)
-
-13. Expand the integration server. You should see the deployed content similarly as we saw while migrating the entire integration node.
-
-![](images/14_expandcontentsIS.png)
-
-During a migration project ideally we should check first for compatibility of the existing code with the new ACE version and new target deployment architecture as containers or CP4I. For this IBM provides IBM Transformation Advisor with a plugin to analyze IIB backups or BAR files and generate migration reports.
-We will run transformation advisor against our IIB v10 backup to see what we might to change before deploying it into containers.
-
-14. Create another folder somewhere in your hard drive. This folder will hold the transformation advisor reports.
-15. Go back to the Integration Console and issue the following command to set up the environment variable that points it to the report folder location (replace the folder with yours):
-
-`export TADataCollectorDirectory=/Users/rramos/Documents/TADir`
-
-16. Run the following command to run Transfomation advisor passing the location of the backup file you downloaded as parameter:
-
-`TADataCollector ace run /Users/rramos/Downloads/TESTNODE_Administrator_210825_083432.zip`
-
-![](images/15_runTA.png)
-
-17. Navigate to the folder you created to store the reports and expand the contents.
-
-![](images/16_browserconentsTA.png)
-
-18. Double-click on the recommendations.html file:
-
-![](images/17_showreport.png)
-
-You will see some recommendations. One of them, for example, is to not use local folders for your file input node (the error we where getting) but rather a network shared file system. This would make it be more container-friendly and portable.
 
 ## Congratulations
 
-You have completed the IIB to ACE migration lab.
+You have completed the ACE Autoscaling lab.
 
 [Return to main lab page](/acelabs/Overview)
