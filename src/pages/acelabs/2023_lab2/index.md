@@ -1,25 +1,66 @@
 ---
-title: IIB v10 Migration
+title: ACE Integration Server Autoscaling on CP4I
 ---
 [Return to main lab page](../../acelabs/Overview/)
 
 ---
 
-# 1. Introduction
+#  Introduction
 
-The purpose of this LAB is to show how to migrate an IBM Integration Bus (IIB) v10 integration node (also known as Broker) into App Connect Enterprise v12
+The purpose of this LAB is to show how to configure autoscaling of Integration Server instances based on cpu utilization.
 
-Prerequsisites:
-You need to have downloaded and installed App Connect Enterprise Toolkit v12.0.6 or later in your local workstation.
+##  Deploy the an Integration Server on CP4i
 
-You can download it from:
+1. Log in to Platform Navigator with your assigned user id.
 
-## 2. Deploy the IIB V10 backup into AppConnect V12
+2. 
 
-In this section we use a backup that was extracted from an IIB v10 instance running on Windows. The mqsibackupbroker command was used to create the backup which is packeged in a zip file. We can grab the zip file and use it to generate the content for an AppConnect v12 deployment. For the purpose of this lab the backup file is already provided for you. You will not be extracting it from an existing instance of IIB.
 
-For your reference, the following command was used:
-![](images/2_winbackup.png)
+   ![](images/1_loginCP4i.png)
+
+   ![](images/2_intgrations.png)
+
+   ![](images/3_dashoard.png)
+
+    ![](images/4_createserver.png)
+
+   ![](images/5_quisckstart.png)  
+
+   ![](images/6_SellectHellow.png)
+
+
+   ![](images/7_confnext.png)
+
+   [](images/8_renameIS.png)
+
+   [](images/9_advancedSettings.png)
+
+
+   [](images/910_limits.png)
+
+
+   [](images/11_waitready.png)
+
+
+   [](images/12_pods.png)
+
+
+   [](images/13_importyaml.png)
+
+
+   [](images/14_api.png)
+
+   [](images/15_getapi.png)
+
+   [](images/16_tryit.png)
+
+   [](images/17_browser.png)
+
+   [](images/18_2pods.png)
+
+   [](images/19_hpa.png)
+
+   [](images/20_desiredreplica.png)
 
 Download the backup file from [TESTNODE_Administrator_210825_083432.zip](../labafiles/TESTNODE_Administrator_210825_083432.zip]) and save it to local folder in your workstation.
 

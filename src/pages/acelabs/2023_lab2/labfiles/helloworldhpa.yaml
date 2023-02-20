@@ -6,7 +6,8 @@ metadata:
 spec:
   scaleTargetRef:
     kind: IntegrationServer
-    name: helloworld-cody01
+    name: helloworld
+    apiVersion: appconnect.ibm.com/v1beta1
   minReplicas: 1
   maxReplicas: 4
-  targetCPUUtilizationPercentage: 10
+  targetCPUUtilizationPercentage: 20
