@@ -1,63 +1,85 @@
-- title: ACE Labs
+- title: App Connect Enterprise Labs
   pages:
-    - title: Labs Overview
-      path: /acelabs/Overview
-    - title: Labs Prerequisites
-      path: /acelabs/Updated-Pre-Lab/
-    - title: Lab 1
-      path: /acelabs/Lab_1/
-    - title: Lab 2
-      path: /acelabs/Lab_2/
-    - title: Lab 3
-      path: /acelabs/Lab_3/
-    - title: Lab 4
-      path: /acelabs/Lab_4/
-    - title: Lab 5
-      path: /acelabs/Lab_5/
-- title: MQ Labs
+    - path: /acelabs
+- title: Gatsby Original
   pages:
-    - title: Overview
-      path: /MQ-Labs/Overview
-    - title: Creating an MQ Instance Using the Platform Navigator
-      path: /MQ-Labs/Lab1/
-    - title: Automate MQ Configuration with Tekton Pipelines
-      path: /MQ-Labs/Lab2
-    - title: Deploying a Cloud Native HA persistent IBM MQ Queue Manager on the Cloud Pak for Integration
-      path: /MQ-Labs/Lab3/
-- title: EventStreams Labs
+    - title: Getting started
+      path: /getting-started
+    - title: Demo
+      path: /demo
+    - title: Gallery
+      path: /gallery
+    - title: Contributions
+      path: /contributions
+- title: Guides
   pages:
-    - title: EventStreams Labs Prep
-      path: /es-labs/lab-0
-    - title: Getting Started with IBM Event Streams 10.5.0
-      path: /es-labs/lab-1
-    - title: Producing & Consuming Data with Event Streams
-      path: /es-labs/lab-2
-- title: APIC Labs
+    - title: Authoring MDX
+      path: /guides/MDX
+    - title: Configuration
+      path: /guides/configuration
+    - title: Gatsby Sketch kit
+      path: /guides/sketch-kit
+    - title: Hosting
+      path: /guides/hosting
+    - title: Navigation
+      path: /guides/navigation/sidebar
+    - title: npm scripts
+      path: /guides/npm-scripts
+    - title: Shadowing
+      path: /guides/shadowing
+    - title: Styling
+      path: /guides/styling
+    - title: v2.0 Migration
+      path: /guides/v2-migration
+- title: Components
   pages:
-    - title: APIC Overview
-      path: /APIC-labs-new/Overview
-    - title: Lab 1 - Create and Secure an API
-      path: /APIC-labs-new/Lab1
-    - title: Lab 2 - The Developer Portal Experienace
-      path: /APIC-labs-new/Lab2
-    - title: Lab 3 - Add OAuth Security to your API and use Lifecycle Controls to Version Your API
-      path: /APIC-labs-new/Lab3
-    - title: Lab 4 - Creating a GraphQL Proxy API
-      path: /APIC-labs-new/Lab4
-- title: Datapower
-  pages:
-    - title: Datapower Labs Overview
-      path: /datapower/Overview
-    - title: Secure Multi-Protocol Gateway
-      path: /datapower/Lab1
-    - title: Create a Secure Backup
-      path: /datapower/Lab2
-- title: Aspera
-  pages:
-    - title: Aspera Labs Prep
-      path: /aspera-lab/lab0
-    - title: Aspera Lab
-      path: /aspera-lab/lab1
-- title: Resources
-  pages:
-    - path: /resources/
+    - title: Accordion
+      path: /components/Accordion
+    - title: AnchorLinks
+      path: /components/AnchorLinks
+    - title: ArtDirection
+      path: /components/ArtDirection
+    - title: ArticleCard
+      path: /components/ArticleCard
+    - title: Aside
+      path: /components/Aside
+    - title: Caption
+      path: /components/Caption
+    - title: Code blocks
+      path: /components/code-blocks
+    - title: DoDontExample
+      path: /components/DoDontExample
+    - title: DoDontRow
+      path: /components/DoDontRow
+    - title: FeatureCard
+      path: /components/FeatureCard
+    - title: FeedbackDialog
+      path: /components/FeedbackDialog
+    - title: GifPlayer
+      path: /components/GifPlayer
+    - title: Grid
+      path: /components/Grid
+    - title: ImageCard
+      path: /components/ImageCard
+    - title: ImageGallery
+      path: /components/ImageGallery
+    - title: InlineNotification
+      path: /components/InlineNotification
+    - title: Markdown
+      path: /components/markdown
+    - title: MediumPosts
+      path: /components/MediumPosts
+    - title: MiniCard
+      path: /components/MiniCard
+    - title: PageDescription
+      path: /components/PageDescription
+    - title: ResourceCard
+      path: /components/ResourceCard
+    - title: SquareCard
+      path: /components/SquareCard
+    - title: Tabs
+      path: /components/Tabs
+    - title: Title
+      path: /components/Title
+    - title: Video
+      path: /components/Video
