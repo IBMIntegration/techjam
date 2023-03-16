@@ -1,17 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Theme Carbon',
-    description: 'A Gatsby theme for the carbon design system',
-    keywords: 'gatsby,theme,carbon',
+    title: 'Integration Tech Jam',
+    description: 'Automation SWAT Team presents the Integration Tech Jam',
+    keywords: 'ibm,swat,cp4i,techjam',
   },
-  pathPrefix: `/gtc`,
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Carbon Design Gatsby Theme',
+        name: 'Automation SWAT Integration',
         icon: 'src/images/favicon.svg',
-        short_name: 'Gatsby Theme Carbon',
+        short_name: 'Automation SWAT Integration',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#161616',
@@ -21,13 +20,14 @@ module.exports = {
     {
       resolve: 'gatsby-theme-carbon',
       options: {
-        mediumAccount: 'carbondesign',
+        isSearchEnabled: true,
         repository: {
           baseUrl:
-            'https://github.com/carbon-design-system/gatsby-theme-carbon',
-          subDirectory: '/packages/example',
+            'https://pages.github.ibm.com/cloud-integration-swat/techjam/',
+          subDirectory: '/',
         },
-      },
-    },
+      }
+    }
   ],
+  pathPrefix: "/cloud-integration-swat/techjam/",
 };
