@@ -1,0 +1,39 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: kedamq-ibm-mq
+  namespace: cp4i
+spec:
+  host: >-
+    kedamq-ibm-mq-cp4i.tj23-699c4a6e7a8bcb110df4c8a81e292df8-0000.us-east.containers.appdomain.cloud
+  to:
+    kind: Service
+    name: kedamq-ibm-mq
+    weight: 100
+  port:
+    targetPort: console-https
+  tls:
+    termination: reencrypt
+    destinationCACertificate: |-
+      -----BEGIN CERTIFICATE-----
+      MIIDVzCCAj+gAwIBAgIEZURmFTANBgkqhkiG9w0BAQsFADA/MQswCQYDVQQGEwJ1
+      czEMMAoGA1UEChMDaWJtMQ4wDAYDVQQLEwVtcXdlYjESMBAGA1UEAxMJbG9jYWxo
+      b3N0MB4XDTIzMDEyMzIzMzMxOVoXDTI0MDEyMzIzMzMxOVowPzELMAkGA1UEBhMC
+      dXMxDDAKBgNVBAoTA2libTEOMAwGA1UECxMFbXF3ZWIxEjAQBgNVBAMTCWxvY2Fs
+      aG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIa3wioq8gkj9Mk+
+      Gvv5qliarZlZuA88nnztRfl3q86a3ePCFRqFAcOy08i6o8TIiFrsCmJNUFTHM9k2
+      KoIfRwN6PiIvgbhBKu+NKWUvFvbLbosuUacmbuLtj56pwi3duh/sXIoVpeM1UQJc
+      OtM+Uxmz/Nac92bX3I3yiPRvhWWEfjaDTYjufW6C1PD/dV0qFcsoIlGFJuIdnvSW
+      F4cuNReYj4WugSL6NTA2pYz/DVgVAMoyaAeaJ/F9TtFr0XdxtoNLrWCh27ETccwR
+      VgzdIFOEg22cf0SBS54kOdweYxQK6/CXXi1/6x+RVwd9JOd/J8d+B66uT3X6YRuT
+      CWdzZ0sCAwEAAaNbMFkwOAYDVR0RBDEwL4Iia2VkYXFtLTAucW0uY3A0aS5zdmMu
+      Y2x1c3Rlci5sb2NhbIIJbG9jYWxob3N0MB0GA1UdDgQWBBSgwbAHE9GZOt4rr3/X
+      VFNauVEMeDANBgkqhkiG9w0BAQsFAAOCAQEAEsYsx5LjfihlFnzysBvOhLPvnIZ4
+      JXUHID2CcAE40kVsHagde4g5ZxVeU8gvw1hSYEOe0WmDyY0kwZ8pNjsNLSAaSyrL
+      mNtwf/iuXDDRovFU/Ie5vFCOdDwQMwOioKZHSX6ipZunM9D0aJxGAhDiltayO3kE
+      tkXAXOrznPPG8cfLjeuQRpcO4yEscHKTVGWv854x2WtGqbGNR4uWBvHbywUuSUXq
+      v8z3drlii/PBG/D3Pk8SxmjFXoL1lVCT3QSmSJ0KTvfEaCVTh1W4APfcOfkVuzhG
+      9m6xTGloeRawq9YWJTT82N7qQ9JU6y8J8gDmBWByy8IXH2wqJQ/VmMJweA==
+      -----END CERTIFICATE-----
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None

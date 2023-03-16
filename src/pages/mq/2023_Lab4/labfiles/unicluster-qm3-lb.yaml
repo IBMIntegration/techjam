@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: unicluster-qm3-lb
+  namespace: cp4i
+spec:
+  ports:
+    - protocol: TCP
+      port: 1414
+      targetPort: 1414
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/instance: unicluster-qm3
+    app.kubernetes.io/name: ibm-mq

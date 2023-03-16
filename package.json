@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "gatsby develop -H 0.0.0.0",
     "dev:clean": "gatsby clean && gatsby develop -H 0.0.0.0",
-    "build": "gatsby build",
-    "build:clean": "yarn clean && gatsby build",
-    "deploy": "gatsby build && gh-pages -d public",
+    "build": "gatsby build --prefix-paths",
+    "build:clean": "yarn clean && gatsby build --prefix-paths",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy:clean": "yarn clean && gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },

@@ -1,0 +1,108 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: kedaqm
+  namespace: cp4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      statefulSetName: kedaqm
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ibm-mq
+        statefulSetName: kedaqm
+    spec:
+      restartPolicy: Always
+      serviceAccountName: unicluster-qm1-ibm-mq
+      schedulerName: default-scheduler
+      affinity: {}
+      terminationGracePeriodSeconds: 30
+      securityContext: {}
+      containers:
+        - resources:
+            limits:
+              cpu: 500m
+              memory: 1Gi
+            requests:
+              cpu: 500m
+              memory: 1Gi
+          readinessProbe:
+            exec:
+              command:
+                - chkmqready
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 5
+            successThreshold: 1
+            failureThreshold: 1
+          terminationMessagePath: /run/termination-log
+          name: qmgr
+          livenessProbe:
+            exec:
+              command:
+                - chkmqhealthy
+            initialDelaySeconds: 90
+            timeoutSeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 1
+          env:
+            - name: MQSNOAUT
+              value: 'yes'
+            - name: LICENSE
+              value: accept
+            - name: MQ_QMGR_NAME
+              value: KEDAQM
+            - name: MQ_MULTI_INSTANCE
+              value: 'false'
+            - name: MQ_ENABLE_METRICS
+              value: 'false'
+            - name: MQ_ENABLE_EMBEDDED_WEB_SERVER
+              value: 'true'
+            - name: LOG_FORMAT
+              value: basic
+            - name: DEBUG
+              value: 'false'
+            - name: MQ_ENABLE_TRACE_STRMQM
+              value: 'false'
+            - name: MQ_EPHEMERAL_PREFIX
+              value: /run/mqm
+            - name: MQ_GRACE_PERIOD
+              value: '29'
+            - name: MQ_NATIVE_HA
+              value: 'false'
+            - name: MQ_NAMESPACE
+              value: cp4i
+            - name: AMQ_CLOUD_PAK
+              value: 'false'
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            privileged: false
+            runAsNonRoot: true
+            readOnlyRootFilesystem: false
+            allowPrivilegeEscalation: false
+          ports:
+            - containerPort: 1414
+              protocol: TCP
+            - containerPort: 9157
+              protocol: TCP
+            - containerPort: 9443
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          terminationMessagePolicy: File
+          image: >-
+            cp.icr.io/cp/ibm-mqadvanced-server-integration@sha256:0639d6d84c18ec8c477e47c29f604725f07b47ea50f23e4eaffae4e440d75fed
+      serviceAccount: unicluster-qm1-ibm-mq
+      dnsPolicy: ClusterFirst
+  serviceName: qm
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 0
+
