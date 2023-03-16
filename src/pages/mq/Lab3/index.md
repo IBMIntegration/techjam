@@ -1,7 +1,7 @@
 ---
 title: Lab 2 - Deploy a Cloud Native HA persistent IBM MQ Queue Manager on CP4I
 ---
-[Return to main lab page](../../MQ-Labs/Overview/)
+[Return to main lab page](/mq)
 
 These instructions will document the process to deploy a NativeHA highly available (HA) persistent IBM MQ on the Cloud Pak for Integration (CP4I) 2022.2.1.
 
