@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<In_Request>
+	<ActionRequest>O</ActionRequest>
+	<DateRequest>2005-10-12</DateRequest>
+	<customerNumber>1</customerNumber>
+	<customerName>ACME Hardware</customerName>
+	<customerDetails>
+		<customerAddress1>1254 Main St</customerAddress1>
+		<customerAddress2>Suite 12</customerAddress2>
+		<customerCity>Dime Box</customerCity>
+		<customerState>TX</customerState>
+		<customerCountry>USA</customerCountry>
+		<customerPostalCode>76543</customerPostalCode>
+		<customerCreditLimit>1200</customerCreditLimit>
+		<customerCreditScore>123</customerCreditScore>
+	</customerDetails>
+	<contactDetails>
+		<contactFirstName>Freddy</contactFirstName>
+		<contactLastName>Bloggs</contactLastName>
+		<contactPhoneNumber>555-123-6543</contactPhoneNumber>
+	</contactDetails>
+	<requestDecision>Y</requestDecision>
+	<comments>Just a Comment</comments>
+</In_Request>
