@@ -23,11 +23,11 @@ module.exports = {
         isSearchEnabled: true,
         repository: {
           baseUrl:
-            'https://pages.github.ibm.com/cloud-integration-swat/techjam/',
+            'https://ibmintegration.github.io/techjam/',
           subDirectory: '/',
         },
       }
     }
   ],
-  pathPrefix: "/cloud-integration-swat/techjam/",
+  pathPrefix: "/techjam/",
 };
