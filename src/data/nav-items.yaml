@@ -3,7 +3,7 @@
     - path: /apic
 - title: App Connect Enterprise Labs
   pages:
-    - path: /acelabs
+    - path: /ace
 - title: Aspera Labs
   pages:
     - path: /aspera
