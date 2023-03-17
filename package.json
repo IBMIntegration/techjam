@@ -6,21 +6,16 @@
   "scripts": {
     "dev": "gatsby develop -H 0.0.0.0",
     "dev:clean": "gatsby clean && gatsby develop -H 0.0.0.0",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "build": "gatsby build --prefix-paths",
-    "build:clean": "yarn clean && gatsby build",
+    "build:clean": "yarn clean && gatsby build --prefix-paths",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy:clean": "yarn clean && gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
     "gatsby": "^3.3.1",
-    "gatsby-plugin-mdx": "^2.3.0",
-    "gatsby-remark-images": "^5.0.0",
-    "gatsby-remark-images-medium-zoom": "^1.7.0",
-    "gatsby-remark-images-zoom": "^1.1.0",
-    "gatsby-theme-carbon": "^2.3.0",
-    "gatsby-transformer-remark": "^4.11.0",
-    "gh-pages": "^3.2.3",
+    "gatsby-theme-carbon": "^2.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

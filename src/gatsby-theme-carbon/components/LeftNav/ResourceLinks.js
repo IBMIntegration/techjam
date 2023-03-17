@@ -3,6 +3,10 @@ import ResourceLinks from 'gatsby-theme-carbon/src/components/LeftNav/ResourceLi
 
 const links = [
   {
+    title: 'Catsby Theme Carbon',
+    href: 'https://gatsby.carbondesignsystem.com/',
+  },
+  {
     title: 'Github',
     href: 'https://github.com/carbon-design-system/gatsby-theme-carbon',
   },
