@@ -1,5 +1,5 @@
 ---
-title: Lab 2 - Deploy a Cloud Native HA persistent IBM MQ Queue Manager on CP4I
+title: Lab 2 - Connect an external client to a Queue Manager running in OpenShift
 ---
 [Return to main lab page](../../MQ-Labs/Overview/)
 
