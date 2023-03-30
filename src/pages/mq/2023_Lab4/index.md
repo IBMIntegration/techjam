@@ -1,5 +1,5 @@
 ---
-title: Lab 4 - Deploy an MQ Uniform Cluster on CP4I
+title: Lab 3 - Deploy an MQ Uniform Cluster on CP4I
 ---
 [Return to main lab page](../../MQ-Labs/Overview/)
 
