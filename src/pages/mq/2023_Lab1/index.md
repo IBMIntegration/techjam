@@ -28,7 +28,7 @@ The following figure shows a typical deployment with three instances of a queue 
 
 * #NOTE: FILES REQUIRED FOR THIS LAB
 All files required for this lab can be downloaded from:
-https://github.com/IBMIntegration/techjam/tree/master/src/pages/mq/2023_Lab4/labfiles
+https://github.com/IBMIntegration/techjam/tree/master/src/pages/mq/2023_Lab1/_labfiles
 
 ## Deploy the MQ Queue Manager with associated resources
 
