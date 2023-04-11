@@ -59,16 +59,16 @@ The purpose of this LAB is to show how to configure autoscaling of Integration S
 kind: HorizontalPodAutoscaler
 apiVersion: autoscaling/v1
 metadata:
-name: helloworldhpa-
-namespace: cp4i
+  name: helloworldhpa
+  namespace: cp4i
 spec:
-scaleTargetRef:
-kind: IntegrationServer
-name: is-helloworld-
-apiVersion: appconnect.ibm.com/v1beta1
-minReplicas: 1
-maxReplicas: 4
-targetCPUUtilizationPercentage: 10
+  scaleTargetRef:
+    kind: IntegrationServer
+    name: helloworld
+    apiVersion: appconnect.ibm.com/v1beta1
+  minReplicas: 1
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 20
 ```
 
 This creates a Horizontal Pod Autoscaler that will increase the number of replicas of the pod when average CPU utilization goes beyond 20%. Note that the target of the pod autoscaler is not a base k8s object such as deployment or statefuleset but rather an ACE Integration Server Custom Definition.

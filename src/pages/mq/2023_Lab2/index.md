@@ -24,7 +24,7 @@ In this lab you will connect an MQ client running on your laptop to the Native M
 
 * #NOTE: FILES REQUIRED FOR THIS LAB
 All files required for this lab can be downloaded from:
-https://github.com/IBMIntegration/techjam/tree/master/src/pages/mq/2023_Lab2/_labfiles
+https://github.com/IBMIntegration/techjam/tree/master/src/pages/mq/2023_Lab2/.labfiles
 
   ## Set up the OCP Routes
 
