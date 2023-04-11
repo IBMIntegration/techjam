@@ -27,7 +27,7 @@ The following figure shows a typical deployment with three instances of a queue 
 
 ## Deploy the MQ Queue Manager with associated resources
 
-Instead of creating the queues, channels and security settings manually as we did in the previous lab we will provide a configmap that will be used the MQ operator to create/configure all those objects on pod startup.
+We will provide a configmap that will be used by the MQ operator to create/configure all those objects on pod startup.
 
 The hyperlink to the OpenShift Console for the cluster should be included in your email. Navigate to the OCP console now.
 
