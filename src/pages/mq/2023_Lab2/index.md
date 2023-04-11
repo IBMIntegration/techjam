@@ -22,6 +22,10 @@ In this lab you will connect an MQ client running on your laptop to the Native M
 
     Follow any configuration instructions of the mq client after installation.
 
+* #NOTE: FILES REQUIRED FOR THIS LAB
+All files required for this lab can be downloaded from:
+https://github.com/IBMIntegration/techjam/tree/master/src/pages/mq/2023_Lab4/labfiles
+
   ## Set up the OCP Routes
 
 We need to create an openshift route to allow external application to connect in the cluster using TLS.
@@ -33,6 +37,8 @@ Note: The first part of the host URL must match the name of the channel name in 
 ![](assets/20220710_170056_mqroute3.png)
 
 2. The 4 clientkey files corresponding to the certificates configured on the MQ Channel will be provided to you. Download them to a folder in your local machine.
+
+
 3. Return the Platform Navigator home page and click on on your queue manager name in the Messaging box
 
    ![](assets/20220710_174446_PNMessaging.png)

@@ -20,6 +20,11 @@ In this lab you will deploy an MQ Uniform Cluster in CP4I. The MQ Operator is no
 
     Follow any configuration instructions of the mq client after installation.
 
+
+* #NOTE: FILES REQUIRED FOR THIS LAB
+All files required for this lab can be downloaded from:
+https://github.com/IBMIntegration/techjam/tree/master/src/pages/mq/2023_Lab4/labfiles
+
 1. Log into the OCP console
 2. Click on the (+) icon at the top right of the Openshift console and paste the contents of the configmap-unicluster-ini.yaml file included in this lab.
 

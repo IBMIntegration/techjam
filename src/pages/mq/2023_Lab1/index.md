@@ -25,6 +25,11 @@ The following figure shows a typical deployment with three instances of a queue 
 
 ![](./images/image00.png)
 
+
+* #NOTE: FILES REQUIRED FOR THIS LAB
+All files required for this lab can be downloaded from:
+https://github.com/IBMIntegration/techjam/tree/master/src/pages/mq/2023_Lab4/labfiles
+
 ## Deploy the MQ Queue Manager with associated resources
 
 We will provide a configmap that will be used by the MQ operator to create/configure all those objects on pod startup.
