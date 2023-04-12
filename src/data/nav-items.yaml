@@ -1,18 +1,6 @@
-- title: API Connect Labs
-  pages:
-    - path: /apic
 - title: App Connect Enterprise Labs
   pages:
     - path: /ace
-- title: Aspera Labs
-  pages:
-    - path: /aspera
-- title: DataPower Labs
-  pages:
-    - path: /datapower
-- title: EventStreams Labs
-  pages:
-    - path: /eventstreams
 - title: MQ Labs
   pages:
     - path: /mq
