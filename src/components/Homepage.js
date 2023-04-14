@@ -5,45 +5,49 @@ import { calloutLink } from './Homepage.module.scss';
 
 import Carbon from './carbon.jpg';
 
-const FirstLeftText = () => <p>Callout component</p>;
+const FirstLeftText = () => <p>Integration</p>;
 
 const FirstRightText = () => (
   <p>
-    This is a callout component. You can edit the contents by updating the{' '}
-    <a href="https://github.com/carbon-design-system/gatsby-theme-carbon/blob/5fe12de31bb19fbfa2cab7c69cd942f55aa06f79/packages/example/src/gatsby-theme-carbon/templates/Homepage.js">
-      pre-shadowed homepage template
-    </a>
-    . You can also provide <code>color</code> and <code>backgroundColor</code>{' '}
-    props to suit your theme.
-    <a
-      className={calloutLink}
-      href="https://github.com/carbon-design-system/gatsby-theme-carbon/blob/main/packages/example/src/gatsby-theme-carbon/templates/Homepage.js">
-      Homepage source →
-    </a>
+    IBM's WW Integration SWAT Team tackles some of the most complex integration
+    problems our customers face today.
+    <div style={{fontStyle: 'italic'}}>
+      The Automation Integration Tech Jam is our way of sharing that knowledge.
+    </div>
   </p>
 );
 
-const SecondLeftText = () => <p>Callout component</p>;
+const SecondLeftText = () => <p>Tech Jam Labs</p>;
 
 const SecondRightText = () => (
   <p>
-    You can also not use these components at all by not providing the callout
-    props to the template or writing your own template.
-    <a
-      className={calloutLink}
-      href="https://github.com/carbon-design-system/gatsby-theme-carbon/blob/main/packages/example/src/gatsby-theme-carbon/templates/Homepage.js">
-      Homepage source →
-    </a>
+    The Tech Jam consists of interactive presentations, labs, and demo sessions
+    where SWAT Team Leads discuss specific real-world technical concepts with
+    the participants.
+    <div>
+      <a
+        className={calloutLink}
+        href="/ace">
+        App Connect Enterprise →
+      </a>
+    </div>
+    <div>
+      <a
+        className={calloutLink}
+        href="mq">
+        IBM MQ →
+      </a>
+    </div>
   </p>
 );
 
-const BannerText = () => <h1>Carbon Gatsby theme</h1>;
+const BannerText = () => <h1>IBM Integration Tech Jams</h1>;
 
 const customProps = {
   Banner: <HomepageBanner renderText={BannerText} image={Carbon} />,
   FirstCallout: (
     <HomepageCallout
-      backgroundColor="#030303"
+      backgroundColor="#0043ce"
       color="white"
       leftText={FirstLeftText}
       rightText={FirstRightText}
