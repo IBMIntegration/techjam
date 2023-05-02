@@ -17,7 +17,7 @@ You can download it from:
 
 ## 2. Deploy the IIB V10 backup into AppConnect V12
 
-In this section we use a backup that was extracted from an IIB v10 instance running on Windows. The mqsibackupbroker command was used to create the backup which is packeged in a zip file. We can grab the zip file and use it to generate the content for an AppConnect v12 deployment. For the purpose of this lab the backup file is already provided for you. You will not be extracting it from an existing instance of IIB.
+In this section we use a backup that was extracted from an IIB v10 instance running on Windows. The mqsibackupbroker command was used to create the backup which is packeged in a zip file. We can grab the zip file and use it to generate the content for an AppConnect v12 deployment. For the purpose of this lab the backup file is already provided for you. You will not be extracting it from an existing instance of IIB
 
 For your reference, the following command was used:
 ![](images/2_winbackup.png)
