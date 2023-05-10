@@ -27,7 +27,7 @@ const SecondRightText = () => (
     <div>
       <a
         className={calloutLink}
-        href="/ace">
+        href="ace">
         App Connect Enterprise →
       </a>
     </div>

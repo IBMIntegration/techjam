@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from 'gatsby-theme-carbon/src/components/Footer';
 
 const Content = () => (<></>)
-const links = { firstCol: [], secondCol: []}
+const links = { firstCol: [], secondCol: [] }
 // const Content = ({ buildTime }) => (
 //   <>
 //     <p>
