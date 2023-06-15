@@ -81,11 +81,11 @@ To add an exception in the Firefox browser, click **Advanced** and then click **
 
 7\. If you would like to create this web service yourself, follow the instructions in the **Using a REST API to manage a set of records** tutorial (https://www.ibm.com/docs/en/app-connect/11.0.0?topic=enterprise-toolkit-tutorials-github).  Otherwise, you can download the **CustomerDatabaseV1.bar** file for the service [here](./resources/CustomerDatabaseV1.bar).
 
-8\. Click on **Create server**.
+8\. Click on **Deploy integrations**.
 
 ![alt text][pic94]
 
-9\. Click **Quick start toolkit integration** and click **Next**.
+9\. Click **Quick start integration** and click **Next**.
 
 ![alt text][pic95]
 
@@ -143,7 +143,7 @@ To add an exception in the Firefox browser, click **Advanced** and then click **
 
 ## 3. Import an API into API Connect <a name="import_api"></a>
 
-1\. Click on **IBM Automation** in the upper left.
+1\. Click on **IBM Cloud Pak** in the upper left.
 
 ![alt text][pic104]
 
@@ -213,11 +213,11 @@ Finally, we will configure the proxy call to invoke the endpoint.
 
 ### 4a. Configure API Key Security <a name="configure_security"></a>
 
-1\. Upon import, you will notice that an error has been detected.  Click on the **error**.
+1\. Click **Validate**, you will notice that an error has been detected.  Click on the **error**.
 
 ![alt text][pic16]
 
-2\. The error indicates that **the openapi definition must contain the 'https' scheme.**.  After reviewing the error, click on the **X** to close the window.
+2\. The error indicates that **the OpenAPI definition must contain the 'https' or 'wss' scheme.**.  After reviewing the error, click on the **X** to close the window.
 
 ![alt text][pic17]
 
@@ -247,7 +247,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic24]
 
-8\. For the **Name**, enter a name (e.g., **X-IBM-Client-Id**), select **client_id** from the drop-down menu for **Key Type (optional)**, and select **header** from the drop-down menu for **Located In**.  Click **Create**.
+8\. For the **Variable name**, enter a name (e.g., **X-IBM-Client-Id**), select **client_id** from the drop-down menu for **Key Type (optional)**, and select **header** from the drop-down menu for **Located In**.  Click **Create**.
 
 ![alt text][pic25]
 
@@ -267,7 +267,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic32]
 
-13\. For the **Name**, enter a name (e.g., **X-IBM-Client-Secret**), select **client_secret** from the drop-down menu for **Key Type (optional)**, and select **header** from the drop-down menu for **Located In**.  Click **Create**.
+13\. For the **Variable name**, enter a name (e.g., **X-IBM-Client-Secret**), select **client_secret** from the drop-down menu for **Key Type (optional)**, and select **header** from the drop-down menu for **Located In**.  Click **Create**.
 
 ![alt text][pic33]
 
@@ -518,7 +518,7 @@ Click **Send**.
 {
   "firstname": "Emily",
   "lastname": "Drew",
-  "address": "123 Colorado Address"
+  "address": "456 Colorado Address"
 }
 ```
 and click **Send**.
