@@ -25,7 +25,7 @@ The following figure shows a typical deployment with three instances of a queue 
 
 ![](./images/image00.png)
 
-
+ 
 * #NOTE: FILES REQUIRED FOR THIS LAB
 All files required for this lab can be downloaded from:
 https://github.com/IBMIntegration/techjam/tree/master/src/pages/mq/2023_Lab1/.labfiles
