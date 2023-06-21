@@ -13,7 +13,7 @@ Prerequsisites:
 You need to have downloaded and installed App Connect Enterprise Toolkit v12.0.6 or later in your local workstation.
 
 You can download it from:
-[https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started]()
+[https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started](https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started)
 
 ## Import the Project Interchange file containing the assets used in this lab.
 
