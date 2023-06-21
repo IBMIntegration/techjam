@@ -71,7 +71,7 @@ spec:
   maxReplicas: 4
   targetCPUUtilizationPercentage: 20
 ```
-For CP4I 2022.4 or later
+For CP4I 2022.4 or later:
 ```
 kind: HorizontalPodAutoscaler
 apiVersion: autoscaling/v1
