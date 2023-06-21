@@ -55,6 +55,7 @@ The purpose of this LAB is to show how to configure autoscaling of Integration S
 
 ![](images/13_importyaml.png)
 
+For CP4I 2022.2 or earlier:
 ```
 kind: HorizontalPodAutoscaler
 apiVersion: autoscaling/v1
@@ -64,6 +65,22 @@ metadata:
 spec:
   scaleTargetRef:
     kind: IntegrationServer
+    name: helloworld
+    apiVersion: appconnect.ibm.com/v1beta1
+  minReplicas: 1
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 20
+```
+For CP4I 2022.4 or later
+```
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v1
+metadata:
+  name: helloworldhpa
+  namespace: cp4i
+spec:
+  scaleTargetRef:
+    kind: IntegrationRuntime
     name: helloworld
     apiVersion: appconnect.ibm.com/v1beta1
   minReplicas: 1
