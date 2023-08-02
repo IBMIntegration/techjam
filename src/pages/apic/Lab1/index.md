@@ -49,6 +49,10 @@ Before we can use API Connect we must publish an API to expose. We will deploy a
 
 ![alt text][pic0]
 
+3\. Enter the username and password provided to you for this lab. The username in the screenshots of this lab is chopper12. Click **Log in**.
+
+![alt text][pic5]
+
 **Note:** You may get a warning message that your connection is not private.  If you get this message, you can add an exception.   Occasionally in Edge on Windows you get a blank screen instead of a warning. If this is the case we recommend that you try a a different browser.
 
 To add an exception in the Chrome browser, click **Advanced** and then click **Proceed** to the URL.
@@ -62,10 +66,6 @@ To add an exception in the Firefox browser, click **Advanced** and then click **
 ![alt text][pic3]
 
 ![alt text][pic4]
-
-3\. When prompted, use the username and password provided to you for this lab. The username in the screenshots of this lab is chopper12.
-
-![alt text][pic5]
 
 4\. When you log in for the first time, you may see a **Welcome, let's get started** window.  Feel free to review the contents by click **Start the tour** or by click on the **X** to close the window.
 
