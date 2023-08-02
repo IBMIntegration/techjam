@@ -235,7 +235,7 @@ Finally, we will configure the proxy call to invoke the endpoint.
 
 ![alt text][pic21]
 
-Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.  You should no longer see the warning indicator.
+Once saved, you will see an indicator window appear that shows that **API has been updated**.  Click on the **X** to close the window.  You should no longer see the warning indicator.
 
 ![alt text][pic22]
 
@@ -255,7 +255,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic26]
 
-10\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
+10\. Once saved, you will see an indicator window appear that shows that **API has been updated**.  Click on the **X** to close the window.
 
 ![alt text][pic22]
 
@@ -275,7 +275,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic26]
 
-15\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
+15\. Once saved, you will see an indicator window appear that shows that **API has been updated**.  Click on the **X** to close the window.
 
 ![alt text][pic22]
 
@@ -295,7 +295,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic26]
 
-20\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
+20\. Once saved, you will see an indicator window appear that shows that **API has been updated**.  Click on the **X** to close the window.
 
 ![alt text][pic22]
 
@@ -345,7 +345,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic26]
 
-12\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
+12\. Once saved, you will see an indicator window appear that shows that **API has been updated**.  Click on the **X** to close the window.
 
 ![alt text][pic22]
 
@@ -371,7 +371,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic52]
 
-6\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
+6\. Once saved, you will see an indicator window appear that shows that **API has been updated**.  Click on the **X** to close the window.
 
 ![alt text][pic53]
 
@@ -422,7 +422,7 @@ In the API Designer, you have the ability to test the API immediately after crea
 
 ![alt text][pic54]
 
-2\. You will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.  You should see that the API is now Online.
+2\. You will see an indicator window appear that shows that **API has been updated**.  Click on the **X** to close the window.  You should see that the API is now Online.
 
 ![alt text][pic55]
 
